@@ -66,5 +66,5 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj"
     },
-    "dotnet.defaultSolution": "Barrikade.sln"
+    "dotnet.defaultSolution": "Barrikade-Source-Code.sln"
 }
