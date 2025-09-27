@@ -64,7 +64,8 @@ namespace StarterAssets
 		private float _jumpTimeoutDelta;
 		private float _fallTimeoutDelta;
 
-	
+		private StaminaController staminaController;
+
 #if ENABLE_INPUT_SYSTEM
 		private PlayerInput _playerInput;
 #endif
@@ -78,11 +79,11 @@ namespace StarterAssets
 		{
 			get
 			{
-				#if ENABLE_INPUT_SYSTEM
+#if ENABLE_INPUT_SYSTEM
 				return _playerInput.currentControlScheme == "KeyboardMouse";
-				#else
+#else
 				return false;
-				#endif
+#endif
 			}
 		}
 
@@ -112,7 +113,7 @@ namespace StarterAssets
 
 		private void Update()
 		{
-			JumpAndGravity();
+			//JumpAndGravity();
 			GroundedCheck();
 			Move();
 		}
@@ -136,7 +137,7 @@ namespace StarterAssets
 			{
 				//Don't multiply mouse input by Time.deltaTime
 				float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
-				
+
 				_cinemachineTargetPitch += _input.look.y * RotationSpeed * deltaTimeMultiplier;
 				_rotationVelocity = _input.look.x * RotationSpeed * deltaTimeMultiplier;
 
@@ -154,7 +155,19 @@ namespace StarterAssets
 		private void Move()
 		{
 			// set target speed based on move speed, sprint speed and if sprint is pressed
-			float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+			float targetSpeed;
+			bool sprinting = false;
+			if (_input.sprint)
+			{
+				targetSpeed = SprintSpeed;
+				sprinting = true;
+				Sprinting(sprinting);
+			}
+			else
+			{
+				targetSpeed = MoveSpeed;
+			}
+			//float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
 
 			// a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 
@@ -197,55 +210,55 @@ namespace StarterAssets
 			// move the player
 			_controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
 		}
-
-		private void JumpAndGravity()
-		{
-			if (Grounded)
-			{
-				// reset the fall timeout timer
-				_fallTimeoutDelta = FallTimeout;
-
-				// stop our velocity dropping infinitely when grounded
-				if (_verticalVelocity < 0.0f)
+		/*
+				private void JumpAndGravity()
 				{
-					_verticalVelocity = -2f;
+					if (Grounded)
+					{
+						// reset the fall timeout timer
+						_fallTimeoutDelta = FallTimeout;
+
+						// stop our velocity dropping infinitely when grounded
+						if (_verticalVelocity < 0.0f)
+						{
+							_verticalVelocity = -2f;
+						}
+
+						// Jump
+						if (_input.jump && _jumpTimeoutDelta <= 0.0f)
+						{
+							// the square root of H * -2 * G = how much velocity needed to reach desired height
+							_verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
+						}
+
+						// jump timeout
+						if (_jumpTimeoutDelta >= 0.0f)
+						{
+							_jumpTimeoutDelta -= Time.deltaTime;
+						}
+					}
+					else
+					{
+						// reset the jump timeout timer
+						_jumpTimeoutDelta = JumpTimeout;
+
+						// fall timeout
+						if (_fallTimeoutDelta >= 0.0f)
+						{
+							_fallTimeoutDelta -= Time.deltaTime;
+						}
+
+						// if we are not grounded, do not jump
+						_input.jump = false;
+					}
+
+					// apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
+					if (_verticalVelocity < _terminalVelocity)
+					{
+						_verticalVelocity += Gravity * Time.deltaTime;
+					}
 				}
-
-				// Jump
-				if (_input.jump && _jumpTimeoutDelta <= 0.0f)
-				{
-					// the square root of H * -2 * G = how much velocity needed to reach desired height
-					_verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
-				}
-
-				// jump timeout
-				if (_jumpTimeoutDelta >= 0.0f)
-				{
-					_jumpTimeoutDelta -= Time.deltaTime;
-				}
-			}
-			else
-			{
-				// reset the jump timeout timer
-				_jumpTimeoutDelta = JumpTimeout;
-
-				// fall timeout
-				if (_fallTimeoutDelta >= 0.0f)
-				{
-					_fallTimeoutDelta -= Time.deltaTime;
-				}
-
-				// if we are not grounded, do not jump
-				_input.jump = false;
-			}
-
-			// apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
-			if (_verticalVelocity < _terminalVelocity)
-			{
-				_verticalVelocity += Gravity * Time.deltaTime;
-			}
-		}
-
+		*/
 		private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
 		{
 			if (lfAngle < -360f) lfAngle += 360f;
@@ -263,6 +276,15 @@ namespace StarterAssets
 
 			// when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
 			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
+		}
+
+		private void Sprinting(bool sprinting)
+		{
+			if (staminaController.playerStamina > 0 && sprinting)
+			{
+				staminaController.Sprinting();
+			}
+
 		}
 	}
 }
