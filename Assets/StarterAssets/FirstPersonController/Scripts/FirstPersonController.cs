@@ -63,7 +63,6 @@ namespace StarterAssets
 		// timeout deltatime
 		//private float _jumpTimeoutDelta;
 		//private float _fallTimeoutDelta;
-		public bool sprintNotPressed = false;
 		[HideInInspector] public StaminaController _staminaController;
 
 #if ENABLE_INPUT_SYSTEM
@@ -161,17 +160,21 @@ namespace StarterAssets
 		{
 			// set target speed based on move speed, sprint speed and if sprint is pressed
 			float targetSpeed = MoveSpeed;
-			if (_input.sprint)
+			if (_input.sprint & _staminaController.unlockSprint)
 			{
 				if (_staminaController.hasRegenerated)
 				{
-					if (_staminaController.playerStamina > 0  && !sprintNotPressed)
+					if (_staminaController.playerStamina > 0)
 					{
 						targetSpeed = SprintSpeed;
 						_staminaController.weAreSprinting = true;
 						_staminaController.Sprinting();
 					}
 				}
+			}
+			else
+			{
+				_staminaController.weAreSprinting = false;
 			}
 			//float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
 

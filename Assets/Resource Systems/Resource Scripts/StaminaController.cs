@@ -24,6 +24,7 @@ public class StaminaController : MonoBehaviour
 
     private FirstPersonController playerController;
     private StarterAssetsInputs _input;
+    [HideInInspector] public bool unlockSprint = true;
     private void Start()
     {
         playerController = GetComponent<FirstPersonController>();
@@ -43,11 +44,11 @@ public class StaminaController : MonoBehaviour
                 {
                     playerController.setRunSpeed(playerController.MoveSpeed);
                     hasRegenerated = true;
-                    if (_input.sprint == false)
-			        {
-				        playerController.sprintNotPressed = true;
-			        }
                 }
+            }
+            if (_input.sprint == false)
+            {
+                unlockSprint = true;
             }
         }
     }
@@ -65,6 +66,7 @@ public class StaminaController : MonoBehaviour
                 hasRegenerated = false;
                 weAreSprinting = false;
                 playerController.setRunSpeed(playerController.MoveSpeed);
+                unlockSprint = false;
             }
         }
     }
@@ -73,5 +75,4 @@ public class StaminaController : MonoBehaviour
     {
         staminaProgressUI.fillAmount = playerStamina / maxStamina;
     }
-
 }
