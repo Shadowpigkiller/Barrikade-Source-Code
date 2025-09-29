@@ -58,13 +58,13 @@ namespace StarterAssets
 		private float _speed;
 		private float _rotationVelocity;
 		private float _verticalVelocity;
-		private float _terminalVelocity = 53.0f;
+		//private float _terminalVelocity = 53.0f;
 
 		// timeout deltatime
-		private float _jumpTimeoutDelta;
-		private float _fallTimeoutDelta;
-
-		private StaminaController staminaController;
+		//private float _jumpTimeoutDelta;
+		//private float _fallTimeoutDelta;
+		public bool sprintNotPressed = false;
+		[HideInInspector] public StaminaController _staminaController;
 
 #if ENABLE_INPUT_SYSTEM
 		private PlayerInput _playerInput;
@@ -105,10 +105,10 @@ namespace StarterAssets
 #else
 			Debug.LogError( "Starter Assets package is missing dependencies. Please use Tools/Starter Assets/Reinstall Dependencies to fix it");
 #endif
-
 			// reset our timeouts on start
-			_jumpTimeoutDelta = JumpTimeout;
-			_fallTimeoutDelta = FallTimeout;
+			//_jumpTimeoutDelta = JumpTimeout;
+			//_fallTimeoutDelta = FallTimeout;
+			_staminaController = GetComponent<StaminaController>();
 		}
 
 		private void Update()
@@ -152,20 +152,26 @@ namespace StarterAssets
 			}
 		}
 
+		public void setRunSpeed(float speed)
+		{
+			_speed = speed;
+		}
+
 		private void Move()
 		{
 			// set target speed based on move speed, sprint speed and if sprint is pressed
-			float targetSpeed;
-			bool sprinting = false;
+			float targetSpeed = MoveSpeed;
 			if (_input.sprint)
 			{
-				targetSpeed = SprintSpeed;
-				sprinting = true;
-				Sprinting(sprinting);
-			}
-			else
-			{
-				targetSpeed = MoveSpeed;
+				if (_staminaController.hasRegenerated)
+				{
+					if (_staminaController.playerStamina > 0  && !sprintNotPressed)
+					{
+						targetSpeed = SprintSpeed;
+						_staminaController.weAreSprinting = true;
+						_staminaController.Sprinting();
+					}
+				}
 			}
 			//float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
 
@@ -276,15 +282,6 @@ namespace StarterAssets
 
 			// when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
 			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
-		}
-
-		private void Sprinting(bool sprinting)
-		{
-			if (staminaController.playerStamina > 0 && sprinting)
-			{
-				staminaController.Sprinting();
-			}
-
 		}
 	}
 }
