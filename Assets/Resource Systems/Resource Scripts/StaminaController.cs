@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using StarterAssets;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.InputSystem;
-
 
 public class StaminaController : MonoBehaviour
 {
@@ -20,7 +16,6 @@ public class StaminaController : MonoBehaviour
 
     [Header("Stamina UI Elements")]
     [SerializeField] private Image staminaProgressUI = null;
-    [SerializeField] private CanvasGroup sliderCanvasGroup = null;
 
     private FirstPersonController playerController;
     private StarterAssetsInputs _input;
