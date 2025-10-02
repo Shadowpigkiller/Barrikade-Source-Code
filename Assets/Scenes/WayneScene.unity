@@ -5521,30 +5521,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 397881702}
-  - component: {fileID: 397881701}
   - component: {fileID: 397881703}
+  - component: {fileID: 397881704}
   m_Layer: 0
   m_Name: AttackSystemScript
-  m_TagString: Untagged
+  m_TagString: AttackControllerObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &397881701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 397881700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf73b37c919b74948acad86e517685bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AttackSystem
-  attackAreasParent: {fileID: 206834772}
-  areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
-  _textOffsetY: 1
 --- !u!4 &397881702
 Transform:
   m_ObjectHideFlags: 0
@@ -5574,6 +5559,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LoseScreenScript
   gameOverCanvas: {fileID: 1623869670}
   playerMap: {fileID: 1596343478}
+--- !u!114 &397881704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397881700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c742693b5814944ab37919a7de62659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackController
+  attackLocationsParent: {fileID: 206834772}
+  attackInitiatorTimer: 0
+  maxAttackInitiatorTimer: 10
 --- !u!4 &398457446 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8920641077429716038, guid: 3cca65a15bd267e47ac1fb75856f1239, type: 3}
@@ -5596,6 +5596,7 @@ GameObject:
   - component: {fileID: 405675673}
   - component: {fileID: 405675672}
   - component: {fileID: 405675671}
+  - component: {fileID: 405675674}
   m_Layer: 0
   m_Name: KitchenAttack
   m_TagString: Untagged
@@ -5695,6 +5696,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 405675669}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &405675674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405675669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d00a1e6df60b94da2a9df15471a215, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
+  areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
+  NAB_Required: 0
+  attackActive: 0
+  attackDurationTimer: 0
+  maxAttackDuration: 30
+  locationIdentifier: 2
 --- !u!4 &407024519 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8920641077429716038, guid: 3cca65a15bd267e47ac1fb75856f1239, type: 3}
@@ -16804,6 +16823,7 @@ GameObject:
   - component: {fileID: 1078658175}
   - component: {fileID: 1078658174}
   - component: {fileID: 1078658173}
+  - component: {fileID: 1078658176}
   m_Layer: 0
   m_Name: LivingRAttack
   m_TagString: Untagged
@@ -16903,6 +16923,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1078658171}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1078658176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078658171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d00a1e6df60b94da2a9df15471a215, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
+  areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
+  NAB_Required: 0
+  attackActive: 0
+  attackDurationTimer: 0
+  maxAttackDuration: 30
+  locationIdentifier: 1
 --- !u!1001 &1096464950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19510,6 +19548,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5355249877358433818, guid: 5e22cfd8cc554054ea9843c969ebe9f9, type: 3}
   m_PrefabInstance: {fileID: 1599638088}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1262336457 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+  m_PrefabInstance: {fileID: 1646326333}
   m_PrefabAsset: {fileID: 0}
 --- !u!43 &1273183825
 Mesh:
@@ -22616,12 +22659,32 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8616685848737228376, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
   m_PrefabInstance: {fileID: 1646326333}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1262336457}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1596343479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262336457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de4966ba3a1d5d642b5cc5671789173f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StaminaController
+  playerStamina: 100
+  maxStamina: 100
+  weAreSprinting: 0
+  hasRegenerated: 1
+  staminaDrain: 0.5
+  staminaRegen: 0.5
+  staminaProgressUI: {fileID: 0}
+  unlockSprint: 1
 --- !u!1001 &1599638088
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23648,7 +23711,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1596343479}
   m_SourcePrefab: {fileID: 100100000, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
 --- !u!4 &1650955938 stripped
 Transform:
@@ -26631,6 +26697,7 @@ GameObject:
   - component: {fileID: 1851339019}
   - component: {fileID: 1851339018}
   - component: {fileID: 1851339017}
+  - component: {fileID: 1851339020}
   m_Layer: 0
   m_Name: FoyerAttack
   m_TagString: Untagged
@@ -26730,6 +26797,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1851339015}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1851339020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851339015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d00a1e6df60b94da2a9df15471a215, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
+  areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
+  NAB_Required: 0
+  attackActive: 0
+  attackDurationTimer: 0
+  maxAttackDuration: 30
+  locationIdentifier: 0
 --- !u!4 &1852821198 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8920641077429716038, guid: 3cca65a15bd267e47ac1fb75856f1239, type: 3}
