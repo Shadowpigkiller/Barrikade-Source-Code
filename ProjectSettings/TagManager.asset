@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CinemachineTarget
   - attackTextCanvas
+  - PauseMenu
   layers:
   - Default
   - TransparentFX
