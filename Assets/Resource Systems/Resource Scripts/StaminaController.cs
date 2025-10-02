@@ -37,7 +37,7 @@ public class StaminaController : MonoBehaviour
 
                 if (playerStamina >= (maxStamina * 0.30))
                 {
-                    playerController.setRunSpeed(playerController.MoveSpeed);
+                    //playerController.setRunSpeed(playerController.MoveSpeed);
                     hasRegenerated = true;
                 }
             }
@@ -60,7 +60,7 @@ public class StaminaController : MonoBehaviour
             {
                 hasRegenerated = false;
                 weAreSprinting = false;
-                playerController.setRunSpeed(playerController.MoveSpeed);
+                //playerController.setRunSpeed(playerController.MoveSpeed);
                 unlockSprint = false;
             }
         }

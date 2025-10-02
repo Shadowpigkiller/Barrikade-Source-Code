@@ -78,7 +78,7 @@ public class AttackSystem : MonoBehaviour
             //timer = attackTime;
 
             //Show game over screen and halt player input
-            gameObject.GetComponent<LoseScreenScript>().ShowLoseScreen(true);
+            gameObject.GetComponent<WinLoseScript>().ShowLoseScreen(true);
         }
     }
 }
