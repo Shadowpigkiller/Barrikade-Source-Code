@@ -58,13 +58,13 @@ namespace StarterAssets
 		private float _speed;
 		private float _rotationVelocity;
 		private float _verticalVelocity;
-		//private float _terminalVelocity = 53.0f;
+		private float _terminalVelocity = 53.0f;
 
 		// timeout deltatime
-		//private float _jumpTimeoutDelta;
-		//private float _fallTimeoutDelta;
-		[HideInInspector] public StaminaController _staminaController;
+		private float _jumpTimeoutDelta;
+		private float _fallTimeoutDelta;
 
+	
 #if ENABLE_INPUT_SYSTEM
 		private PlayerInput _playerInput;
 #endif
@@ -78,11 +78,11 @@ namespace StarterAssets
 		{
 			get
 			{
-#if ENABLE_INPUT_SYSTEM
+				#if ENABLE_INPUT_SYSTEM
 				return _playerInput.currentControlScheme == "KeyboardMouse";
-#else
+				#else
 				return false;
-#endif
+				#endif
 			}
 		}
 
@@ -104,11 +104,15 @@ namespace StarterAssets
 #else
 			Debug.LogError( "Starter Assets package is missing dependencies. Please use Tools/Starter Assets/Reinstall Dependencies to fix it");
 #endif
-			_staminaController = GetComponent<StaminaController>();
+
+			// reset our timeouts on start
+			_jumpTimeoutDelta = JumpTimeout;
+			_fallTimeoutDelta = FallTimeout;
 		}
 
 		private void Update()
 		{
+			JumpAndGravity();
 			GroundedCheck();
 			Move();
 		}
@@ -132,7 +136,7 @@ namespace StarterAssets
 			{
 				//Don't multiply mouse input by Time.deltaTime
 				float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
-
+				
 				_cinemachineTargetPitch += _input.look.y * RotationSpeed * deltaTimeMultiplier;
 				_rotationVelocity = _input.look.x * RotationSpeed * deltaTimeMultiplier;
 
@@ -147,32 +151,10 @@ namespace StarterAssets
 			}
 		}
 
-		public void setRunSpeed(float speed)
-		{
-			_speed = speed;
-		}
-
 		private void Move()
 		{
 			// set target speed based on move speed, sprint speed and if sprint is pressed
-			float targetSpeed = MoveSpeed;
-			if (_input.sprint & _staminaController.unlockSprint)
-			{
-				if (_staminaController.hasRegenerated)
-				{
-					if (_staminaController.playerStamina > 0)
-					{
-						targetSpeed = SprintSpeed;
-						_staminaController.weAreSprinting = true;
-						_staminaController.Sprinting();
-					}
-				}
-			}
-			else
-			{
-				_staminaController.weAreSprinting = false;
-			}
-			//float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+			float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
 
 			// a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 
@@ -214,6 +196,54 @@ namespace StarterAssets
 
 			// move the player
 			_controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+		}
+
+		private void JumpAndGravity()
+		{
+			if (Grounded)
+			{
+				// reset the fall timeout timer
+				_fallTimeoutDelta = FallTimeout;
+
+				// stop our velocity dropping infinitely when grounded
+				if (_verticalVelocity < 0.0f)
+				{
+					_verticalVelocity = -2f;
+				}
+
+				// Jump
+				if (_input.jump && _jumpTimeoutDelta <= 0.0f)
+				{
+					// the square root of H * -2 * G = how much velocity needed to reach desired height
+					_verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
+				}
+
+				// jump timeout
+				if (_jumpTimeoutDelta >= 0.0f)
+				{
+					_jumpTimeoutDelta -= Time.deltaTime;
+				}
+			}
+			else
+			{
+				// reset the jump timeout timer
+				_jumpTimeoutDelta = JumpTimeout;
+
+				// fall timeout
+				if (_fallTimeoutDelta >= 0.0f)
+				{
+					_fallTimeoutDelta -= Time.deltaTime;
+				}
+
+				// if we are not grounded, do not jump
+				_input.jump = false;
+			}
+
+			// apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
+			if (_verticalVelocity < _terminalVelocity)
+			{
+				_verticalVelocity += Gravity * Time.deltaTime;
+			}
 		}
 
 		private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
