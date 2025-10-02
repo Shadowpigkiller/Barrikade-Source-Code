@@ -12,7 +12,6 @@ public class PauseMenu : MonoBehaviour
     private void Awake()
     {
         _playerInput = GetComponent<PlayerInput>();
-        pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
     }
 
     void Start()
