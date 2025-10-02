@@ -70,11 +70,10 @@ public class AttackLocation : MonoBehaviour
 
     public void OnInteract()
     {
-        int Nab_Amount = 0; //will be getting it from script later
-        if (Nab_Amount >= NAB_Required)
+        if (NAB_Player_Controller.getNAB_Amount() >= NAB_Required)
         {
             DecativateAttack();
-            Nab_Amount -= NAB_Required;
+            NAB_Player_Controller.removeNAB(NAB_Required);
             Debug.Log("interacted");
         }
     }

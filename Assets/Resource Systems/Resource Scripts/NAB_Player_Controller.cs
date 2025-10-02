@@ -2,13 +2,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-public class NAB_Player_Controller : MonoBehaviour
+public static class NAB_Player_Controller
 {
     [Header("Main Nails And Boards Parameters")]
-    [SerializeField] private int NAB_Amount = 0;
-    [SerializeField] private int maxNAB_Amount = 10;
-    [SerializeField] public Text NAB_AmountText;
-    public void AddNAB()
+    [SerializeField] private static int NAB_Amount = 0;
+    [SerializeField] private static int maxNAB_Amount = 10;
+    [SerializeField] public static Text NAB_AmountText;
+    public static void AddNAB()
     {
         if (NAB_Amount < maxNAB_Amount)
         {
@@ -17,13 +17,20 @@ public class NAB_Player_Controller : MonoBehaviour
         }
     }
 
-    public int getNAB_Amount()
+    public static int getNAB_Amount()
     {
         return NAB_Amount;
     }
 
-    public void updateNABUI()
+    public static void updateNABUI()
     {
         NAB_AmountText.text = Convert.ToString(NAB_Amount);
+    }
+
+    public static void removeNAB(int NAB_Required) {
+        if (NAB_Amount > NAB_Required)
+        {
+            NAB_Amount -= NAB_Required;
+        }
     }
 }
