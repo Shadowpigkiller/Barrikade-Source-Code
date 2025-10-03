@@ -2454,9 +2454,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Team Lead - \n\tLucien Byrd\nProgrammers -\n\tWayne Powel\n\tDevin Davis\nConcept
-    Artists -\n\tKarissa Aldridge\n\tTreasure Von-Holland\n\tSoci\n3D Modelers -\n\tNathen
-    Bennet\n\tRashad Williams\n\tZailan\nPixel Artists -\n\tAlexis Alexander\n\tChristian
-    Funches\n"
+    Artists -\n\tKarissa Aldridge\n\tTreasure Von-Holland\n\tSoci Degefa\n3D Modelers
+    -\n\tNathen Bennet\n\tRashad Williams\n\tZailan Mitchell\nPixel Artists -\n\tAlexis
+    Alexander\n\tChristian Funches\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
