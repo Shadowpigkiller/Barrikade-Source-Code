@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-public static class NAB_Player_Controller
+public static class NAB_Player_Controller : object
 {
     [Header("Main Nails And Boards Parameters")]
     [SerializeField] private static int NAB_Amount = 0;
