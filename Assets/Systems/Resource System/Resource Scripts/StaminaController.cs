@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class StaminaController : MonoBehaviour
 {
     [Header("Stamina Main Parameters")]
-    public float playerStamina = 100.0f;
-    [SerializeField] private float maxStamina = 100.0f;
+    public float playerStamina = 130.0f;
+    [SerializeField] private float maxStamina = 130.0f;
     [HideInInspector] public bool weAreSprinting = false;
     [HideInInspector] public bool hasRegenerated = true;
 
@@ -15,7 +15,8 @@ public class StaminaController : MonoBehaviour
     [Range(0, 50)][SerializeField] private float staminaRegen = 0.5f;
 
     [Header("Stamina UI Elements")]
-    [SerializeField] private Image staminaProgressUI = null;
+    [SerializeField] private Image staminaProgressUI;
+    [SerializeField] private StaminaUIController _staminaUIController;
 
     private FirstPersonController playerController;
     private StarterAssetsInputs _input;
@@ -68,6 +69,8 @@ public class StaminaController : MonoBehaviour
 
     void UpdateStamina()
     {
-        staminaProgressUI.fillAmount = playerStamina / maxStamina;
+        //staminaProgressUI.fillAmount = playerStamina / maxStamina;
+        //_staminaBarController.ChangeSprite((int)playerStamina / 10);
+        staminaProgressUI.sprite = _staminaUIController.ChangeSprite((int) playerStamina / 10);
     }
 }
