@@ -9,6 +9,9 @@ TagManager:
   - PauseMenu
   - AttackControllerObject
   - Game UI
+  - KitchenAttack
+  - LRAttack
+  - FoyerAttack
   layers:
   - Default
   - TransparentFX

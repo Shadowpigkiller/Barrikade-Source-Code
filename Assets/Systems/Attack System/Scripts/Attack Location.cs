@@ -15,6 +15,7 @@ public class AttackLocation : MonoBehaviour
     [SerializeField] private float maxAttackDuration; //starting time
     [SerializeField] private int locationIdentifier;
     [SerializeField] public Text NAB_AmountText;
+    [SerializeField] public GameObject TempAttackLocationIndicator;
     void Start()
     {
         attackDurationTimer = maxAttackDuration;
@@ -25,11 +26,13 @@ public class AttackLocation : MonoBehaviour
     {
         attackActive = true;
         attackDurationTimer = maxAttackDuration;
+        TempAttackLocationIndicator.SetActive(true);
     }
 
     public void DecativateAttack()
     {
         attackActive = false;
+        TempAttackLocationIndicator.SetActive(false);
     }
 
     public int GetLocationIdentifier()
@@ -61,7 +64,7 @@ public class AttackLocation : MonoBehaviour
         //Counts attack timer down and if it reaches 0 the player loses
         if (attackDurationTimer <= 0)
         {
-            GameObject.FindWithTag("AttackControllerObject").GetComponent<LoseScreenScript>().ShowLoseScreen(true);
+            GameObject.FindWithTag("AttackControllerObject").GetComponent<WinLoseScript>().ShowLoseScreen(true);
         }
         else
         {

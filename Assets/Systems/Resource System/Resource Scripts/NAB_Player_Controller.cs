@@ -21,16 +21,19 @@ public static class NAB_Player_Controller : object
     {
         return NAB_Amount;
     }
+
+    public static void SetNAB(int NAB_Num)
+    {
+        NAB_Amount = NAB_Num;
+    }
 /*
     public static void updateNABUI()
     {
         NAB_AmountText.text = Convert.ToString(NAB_Amount);
     }
 */
-    public static void removeNAB(int NAB_Required) {
-        if (NAB_Amount > NAB_Required)
-        {
+    public static void removeNAB(int NAB_Required) 
+    {
             NAB_Amount -= NAB_Required;
-        }
     }
 }

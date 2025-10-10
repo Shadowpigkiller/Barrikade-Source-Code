@@ -73,8 +73,8 @@ public class AttackSystem : MonoBehaviour
         else
         {
             //reset timer and set active area to null
-            //activeArea = null;
-            //Destroy(areaTimerClone);
+            activeArea = null;
+            Destroy(areaTimerClone);
             //timer = attackTime;
 
             //Show game over screen and halt player input
