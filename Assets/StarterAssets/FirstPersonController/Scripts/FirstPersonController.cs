@@ -50,7 +50,7 @@ namespace StarterAssets
 		public float TopClamp = 90.0f;
 		[Tooltip("How far in degrees can you move the camera down")]
 		public float BottomClamp = -90.0f;
-
+		public AudioSource footstepsSound, sprintSound;
 		// cinemachine
 		private float _cinemachineTargetPitch;
 
@@ -111,6 +111,11 @@ namespace StarterAssets
 		{
 			GroundedCheck();
 			Move();
+			if (_input.move.x == 0 && _input.move.y == 0)
+            {
+                footstepsSound.enabled = false;
+				sprintSound.enabled = false;
+            }
 		}
 
 		private void LateUpdate()
@@ -162,6 +167,8 @@ namespace StarterAssets
 				{
 					if (_staminaController.playerStamina > 0)
 					{
+						footstepsSound.enabled = false;
+						sprintSound.enabled = true;
 						targetSpeed = SprintSpeed;
 						_staminaController.weAreSprinting = true;
 						_staminaController.Sprinting();
@@ -170,6 +177,8 @@ namespace StarterAssets
 			}
 			else
 			{
+				sprintSound.enabled = false;
+				footstepsSound.enabled = true;
 				_staminaController.weAreSprinting = false;
 			}
 			//float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;

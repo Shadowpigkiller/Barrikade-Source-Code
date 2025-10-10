@@ -1,7 +1,8 @@
 using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
-
+using UnityEngine.UI;
+using System;
 public class AttackLocation : MonoBehaviour
 {
     [SerializeField] private GameObject areaTimer;
@@ -13,7 +14,7 @@ public class AttackLocation : MonoBehaviour
     [SerializeField] private float attackDurationTimer; //current time
     [SerializeField] private float maxAttackDuration; //starting time
     [SerializeField] private int locationIdentifier;
-
+    [SerializeField] public Text NAB_AmountText;
     void Start()
     {
         attackDurationTimer = maxAttackDuration;
@@ -23,6 +24,7 @@ public class AttackLocation : MonoBehaviour
     public void ActivateAttack()
     {
         attackActive = true;
+        attackDurationTimer = maxAttackDuration;
     }
 
     public void DecativateAttack()
@@ -74,6 +76,7 @@ public class AttackLocation : MonoBehaviour
         {
             DecativateAttack();
             NAB_Player_Controller.removeNAB(NAB_Required);
+            NAB_AmountText.text = Convert.ToString(NAB_Player_Controller.getNAB_Amount());
             Debug.Log("interacted");
         }
     }

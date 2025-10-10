@@ -17,7 +17,7 @@ public class AttackSystem : MonoBehaviour
     //Timer increment
     private float attackTime = 30f;
     private float timer;
-    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -78,7 +78,7 @@ public class AttackSystem : MonoBehaviour
             //timer = attackTime;
 
             //Show game over screen and halt player input
-            gameObject.GetComponent<LoseScreenScript>().ShowLoseScreen(true);
+            //gameObject.GetComponent<LoseScreenScript>().ShowLoseScreen(true);
         }
     }
 }

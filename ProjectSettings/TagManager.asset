@@ -8,6 +8,7 @@ TagManager:
   - attackTextCanvas
   - PauseMenu
   - AttackControllerObject
+  - Game UI
   layers:
   - Default
   - TransparentFX

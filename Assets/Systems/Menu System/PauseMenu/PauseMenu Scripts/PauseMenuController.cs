@@ -17,11 +17,11 @@ public class PauseMenuController : MonoBehaviour
             _playerInput.actions.Enable();
             _playerInput.actions["Pause"].performed += SetGameState;
         }
-        Debug.Log("OnEnableEnd");
+        //Debug.Log("OnEnableEnd");
     }
     void OnDisable()
     {
-        Debug.Log("OnDisable");
+        //Debug.Log("OnDisable");
         if (_playerInput != null)
         {
             _playerInput.actions["Pause"].performed -= SetGameState;
@@ -30,9 +30,9 @@ public class PauseMenuController : MonoBehaviour
 
     public void SetGameState(InputAction.CallbackContext callbackContext)
     {
-        Debug.Log("SetGameState called");
+        //Debug.Log("SetGameState called");
 
-        Debug.Log("PauseMenuButtons.IsPausedCheck = " + PauseMenuButtons.IsPausedCheck());
+        //Debug.Log("PauseMenuButtons.IsPausedCheck = " + PauseMenuButtons.IsPausedCheck());
 
         if (PauseMenuButtons.IsPausedCheck())
         {
