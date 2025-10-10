@@ -1462,14 +1462,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Know that each attack requires 1 board to stop.
+  m_text: 'Stop the attacks, you will get a notification of their location on the
+    bottom right of your screen.
 
 
-    Last until the timer
-    in the left hand corner is finished.
+    Know that each attack requires 1 board to
+    stop.
 
 
-    Good Luck!
+    Last until the timer in the left hand corner is finished.
+
+
+    Good
+    Luck!
 
     Do not get possessed.'
   m_isRightToLeft: 0
@@ -2003,7 +2008,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 400, y: -185}
+  m_AnchoredPosition: {x: 449.41, y: -323}
   m_SizeDelta: {x: 598.8134, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2007757039
@@ -2134,7 +2139,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -102}
+  m_AnchoredPosition: {x: 0, y: -90}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2109368295
@@ -2157,11 +2162,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Collect boards, you''ll find them in the Garage.
-
-
-    Stop the attacks,
-    you will get a notification of their location on the bottom right of your screen.'
+  m_text: Grab some boards, you'll find them in the Garage on the far side of the
+    map past the kitchen, but you can only carry up to 5.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}

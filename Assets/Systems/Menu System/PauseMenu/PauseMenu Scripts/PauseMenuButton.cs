@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using StarterAssets;
+using System.Collections;
 
 public class PauseMenuButtons : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class PauseMenuButtons : MonoBehaviour
     private void Awake()
     {
         _cursorControl = new CursorControl();
-        _playerMovement = PlayerReference.Instance.Player.GetComponent<StarterAssetsInputs>();
     }
     private static void SetPauseState(bool state)
     {
@@ -25,11 +25,28 @@ public class PauseMenuButtons : MonoBehaviour
 
     public static void PauseGame()
     {
+        if (_playerMovement == null)
+        {
+            if (PlayerReference.Instance != null && PlayerReference.Instance.Player != null)
+            {
+                _playerMovement = PlayerReference.Instance.Player.GetComponent<StarterAssetsInputs>();
+            }
+            else
+            {
+                Debug.LogError("PlayerReference called before _platerMovement was initialized!");
+                return;
+            }
+        }
         if (PauseMenuReference.Instance != null)
         {
             SetPauseState(true);
         }
+        else
+        {
+            Debug.LogError("PauseMenuReference Null");   
+        }
         _playerMovement.StopMovement();
+        PlayerReference.Instance.Player.GetComponent<AudioSource>().enabled = false;
         Time.timeScale = 0f;
         isPaused = true;
         GameUIReference.Instance.gameObject.GetComponent<CanvasGroup>().alpha = 0f;
