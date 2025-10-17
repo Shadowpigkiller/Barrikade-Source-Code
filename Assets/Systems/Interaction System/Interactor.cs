@@ -29,9 +29,7 @@ public class Interactor : MonoBehaviour
 
     private void DoInteract(InputAction.CallbackContext callbackContext)
     {
-        //Debug.Log("Interact");
-        if (!Physics.Raycast(_transform.position + Vector3.up + (_transform.forward * 0.2f), _transform.forward, out var hit, 1.5f, interactableLayer)) return;
-
+        if (!Physics.Raycast(_transform.position + Vector3.up + (_transform.forward * 0.2f), _transform.forward, out var hit, 2.5f, interactableLayer)) return;
         if (!hit.transform.TryGetComponent(out IInteractable interactable)) return;
         interactable.Interact();
         Debug.Log("Interact");

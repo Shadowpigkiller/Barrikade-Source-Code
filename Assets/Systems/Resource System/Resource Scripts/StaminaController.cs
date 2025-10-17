@@ -31,7 +31,7 @@ public class StaminaController : MonoBehaviour
     {
         if (!weAreSprinting)
         {
-            if (playerStamina <= maxStamina - 0.01)
+            if (playerStamina <= maxStamina - 0.05)
             {
                 playerStamina += staminaRegen * Time.deltaTime;
                 UpdateStamina();
@@ -69,8 +69,6 @@ public class StaminaController : MonoBehaviour
 
     void UpdateStamina()
     {
-        //staminaProgressUI.fillAmount = playerStamina / maxStamina;
-        //_staminaBarController.ChangeSprite((int)playerStamina / 10);
         staminaProgressUI.sprite = _staminaUIController.ChangeSprite((int) playerStamina / 10);
     }
 }
