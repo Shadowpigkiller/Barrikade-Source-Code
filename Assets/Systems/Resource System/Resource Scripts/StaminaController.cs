@@ -31,7 +31,7 @@ public class StaminaController : MonoBehaviour
     {
         if (!weAreSprinting)
         {
-            if (playerStamina <= maxStamina - 0.05)
+            if (playerStamina <= maxStamina)
             {
                 playerStamina += staminaRegen * Time.deltaTime;
                 UpdateStamina();
