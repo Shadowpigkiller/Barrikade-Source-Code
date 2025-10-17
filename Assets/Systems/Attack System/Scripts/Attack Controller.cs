@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class AttackController : MonoBehaviour
 {
@@ -32,6 +34,7 @@ public class AttackController : MonoBehaviour
 
     private void InitiateAttack()
     {
+        
         int chosenAreaNum = Random.Range(0, attackLocations);
         while (chosenAreaNum == noRepeat)
         {
