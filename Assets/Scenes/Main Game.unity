@@ -3491,7 +3491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
   areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
-  NAB_Required: 1
+  NAB_Required: 0
   attackActive: 0
   attackDurationTimer: 0
   maxAttackDuration: 30
@@ -94804,7 +94804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
   areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
-  NAB_Required: 1
+  NAB_Required: 0
   attackActive: 0
   attackDurationTimer: 0
   maxAttackDuration: 30
@@ -102607,7 +102607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
   areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
-  NAB_Required: 1
+  NAB_Required: 0
   attackActive: 0
   attackDurationTimer: 0
   maxAttackDuration: 30
