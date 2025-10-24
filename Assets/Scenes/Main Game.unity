@@ -111982,7 +111982,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1163925696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132954,8 +132954,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackController
   attackLocationsParent: {fileID: 1967313262}
-  attackInitiatorTimer: 10
-  maxAttackInitiatorTimer: 10
+  attackInitiatorTimer: 1000
+  maxAttackInitiatorTimer: 1000
 --- !u!114 &1972140721
 MonoBehaviour:
   m_ObjectHideFlags: 0

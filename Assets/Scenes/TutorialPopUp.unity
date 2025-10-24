@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 211324853}
   - component: {fileID: 211324852}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: TutorialText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -749,7 +749,7 @@ GameObject:
   - component: {fileID: 805031081}
   - component: {fileID: 805031080}
   m_Layer: 5
-  m_Name: Button
+  m_Name: MainMenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -881,7 +881,7 @@ GameObject:
   - component: {fileID: 927284754}
   - component: {fileID: 927284753}
   m_Layer: 5
-  m_Name: Image
+  m_Name: JournalImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -956,7 +956,7 @@ GameObject:
   - component: {fileID: 1188087822}
   - component: {fileID: 1188087821}
   m_Layer: 5
-  m_Name: Controls (2)
+  m_Name: HowToPlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -980,7 +980,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -403}
+  m_AnchoredPosition: {x: 0, y: -433}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1188087821
@@ -1213,7 +1213,7 @@ GameObject:
   - component: {fileID: 1279823549}
   - component: {fileID: 1279823548}
   m_Layer: 5
-  m_Name: BG
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1417,7 +1417,7 @@ GameObject:
   - component: {fileID: 1483901750}
   - component: {fileID: 1483901749}
   m_Layer: 5
-  m_Name: Controls (2)
+  m_Name: Part2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1439,7 +1439,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 812, y: 314}
+  m_AnchoredPosition: {x: 812, y: 385}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1483901749
@@ -1462,21 +1462,24 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Stop the attacks, you will get a notification of their location on the
-    bottom right of your screen.
+  m_text: 'When you can interact with it your cursor will change colors, press E
+    to interact and that will stop the attack.
 
 
-    Know that each attack requires 1 board to
-    stop.
+    Each attack requires 1 board
+    to stop. Keep track of how many boards you have and refill as needed.
 
 
-    Last until the timer in the left hand corner is finished.
+    At
+    the bottom is the sprint bar (a spine), how full it is shows you how much stamina
+    you have left. Press shift to run which will increase your speed, but once you
+    run out of stamina you cannot run until it regins to 30%.
 
 
-    Good
-    Luck!
+    Good luck!
 
-    Do not get possessed.'
+    Don''t
+    get possesed'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -1503,8 +1506,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1580,16 +1583,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1515987384}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -4.889094e-13, y: 6.9849176e-10, z: 0.00069995015, w: 0.99999976}
+  m_LocalPosition: {x: 0, y: 0, z: -4.83031e-10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2007757038}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.08}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.000030517578, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1515987386
@@ -1639,8 +1642,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1840,7 +1843,7 @@ GameObject:
   - component: {fileID: 1859413159}
   - component: {fileID: 1859413158}
   m_Layer: 5
-  m_Name: Controls (1)
+  m_Name: ControlsInputs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1892,6 +1895,9 @@ MonoBehaviour:
     Shift - Run
 
     Esc - Pause
+
+    Look
+    Around - Mouse
 
 '
   m_isRightToLeft: 0
@@ -1985,7 +1991,7 @@ GameObject:
   - component: {fileID: 2007757040}
   - component: {fileID: 2007757039}
   m_Layer: 5
-  m_Name: Button
+  m_Name: StartGameButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2008,7 +2014,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 449.41, y: -323}
+  m_AnchoredPosition: {x: 556, y: -353}
   m_SizeDelta: {x: 598.8134, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2007757039
@@ -2117,7 +2123,7 @@ GameObject:
   - component: {fileID: 2109368296}
   - component: {fileID: 2109368295}
   m_Layer: 5
-  m_Name: Controls (1)
+  m_Name: Part1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2162,8 +2168,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Grab some boards, you'll find them in the Garage on the far side of the
+  m_text: 'Grab some boards, you''ll find them in the Garage on the far side of the
     map past the kitchen, but you can only carry up to 5.
+
+
+    You will get notifications
+    of where an attack is happpening. Go to the location it is at and find the window/door
+    that has a timer.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -2190,8 +2201,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
