@@ -7,17 +7,17 @@ public class PauseMenuController : MonoBehaviour
     [HideInInspector] public CursorControl _cursorControl;
     private PlayerInput _playerInput;
     void Awake()
-{
-    if (PlayerReference.Instance != null && PlayerReference.Instance.Player != null)
     {
-        _playerInput = PlayerReference.Instance.Player.GetComponent<PlayerInput>();
+        if (PlayerReference.Instance != null && PlayerReference.Instance.Player != null)
+        {
+            _playerInput = PlayerReference.Instance.Player.GetComponent<PlayerInput>();
+        }
+        else
+        {
+            Debug.LogWarning("PlayerReference not ready in Awake, delaying init...");
+            StartCoroutine(WaitForPlayerRef());
+        }
     }
-    else
-    {
-        Debug.LogWarning("PlayerReference not ready in Awake, delaying init...");
-        StartCoroutine(WaitForPlayerRef());
-    }
-}
 
     IEnumerator WaitForPlayerRef()
     {

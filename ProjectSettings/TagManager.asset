@@ -12,6 +12,7 @@ TagManager:
   - KitchenAttack
   - LRAttack
   - FoyerAttack
+  - MiniMapUI
   layers:
   - Default
   - TransparentFX
