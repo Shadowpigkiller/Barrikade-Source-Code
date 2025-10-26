@@ -15,7 +15,7 @@ public class AttackLocation : MonoBehaviour
     [SerializeField] private float maxAttackDuration; //starting time
     [SerializeField] private int locationIdentifier;
     [SerializeField] public Text NAB_AmountText;
-    [SerializeField] public GameObject TempAttackLocationIndicator;
+    [SerializeField] public GameObject MiniMapAttackLocationDot;
     [SerializeField] public AudioClip attackSound;
     [SerializeField] public AudioClip initialAttackSound;
     void Start()
@@ -28,7 +28,7 @@ public class AttackLocation : MonoBehaviour
     {
         attackActive = true;
         attackDurationTimer = maxAttackDuration;
-        TempAttackLocationIndicator.SetActive(true);
+        MiniMapAttackLocationDot.SetActive(true);
         AttackAreaMusic.instance.PlaySFX(initialAttackSound, transform, 1);
         AttackAreaMusic.instance.PlayMusic(attackSound, transform, 1, true, locationIdentifier);
     }
@@ -36,7 +36,7 @@ public class AttackLocation : MonoBehaviour
     public void DecativateAttack()
     {
         attackActive = false;
-        TempAttackLocationIndicator.SetActive(false);
+        MiniMapAttackLocationDot.SetActive(false);
         AttackAreaMusic.instance.PlayMusic(attackSound, transform, 1, false, locationIdentifier);
         attackDurationTimer = maxAttackDuration;
         Destroy(areaTimerClone);
