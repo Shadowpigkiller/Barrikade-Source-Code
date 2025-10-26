@@ -17,7 +17,6 @@ public class MiniMapBehavior : MonoBehaviour
             Debug.LogWarning("PlayerReference not ready in Awake, delaying init...");
             StartCoroutine(WaitForPlayerRef());
         }
-        MiniMapGroup.alpha = 0f;
     }
     IEnumerator WaitForPlayerRef()
     {
