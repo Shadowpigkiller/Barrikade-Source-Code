@@ -34,11 +34,11 @@ public class Interactor : MonoBehaviour
     {
         if (Physics.Raycast(_transform.position + Vector3.up + (_transform.forward * 0.2f), _transform.forward, out var hit, 2.5f, interactableLayer))
         {
-            playerCursor.GetComponent<Image>().color = new Color32(255, 0, 0, 100);
+            playerCursor.GetComponent<Image>().color = new Color32(255, 0, 0, 255);
         }
         else
         {
-            playerCursor.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+            playerCursor.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
         }
     }
     private void DoInteract(InputAction.CallbackContext callbackContext)
