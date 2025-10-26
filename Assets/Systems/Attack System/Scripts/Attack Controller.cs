@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class AttackController : MonoBehaviour
 {
@@ -6,6 +8,7 @@ public class AttackController : MonoBehaviour
     [SerializeField] private float attackInitiatorTimer;
     [SerializeField] private float maxAttackInitiatorTimer;
     [HideInInspector] private int attackLocations;
+    [HideInInspector] private int noRepeat;
 
     void Start()
     {
@@ -31,8 +34,18 @@ public class AttackController : MonoBehaviour
 
     private void InitiateAttack()
     {
+        
         int chosenAreaNum = Random.Range(0, attackLocations);
+        while (chosenAreaNum == noRepeat)
+        {
+            chosenAreaNum = Random.Range(0, attackLocations);
+        }
+        noRepeat = chosenAreaNum;
         GameObject chosenArea = attackLocationsParent.transform.GetChild(chosenAreaNum).gameObject;
-        chosenArea.GetComponent<AttackLocation>().ActivateAttack();
+        //if the area is not active then activate it else do not activate it
+        if (!chosenArea.GetComponent<AttackLocation>().attackActive)
+        {
+            chosenArea.GetComponent<AttackLocation>().ActivateAttack();
+        }
     }
 }

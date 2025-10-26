@@ -3491,13 +3491,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
   areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
-  NAB_Required: 1
+  NAB_Required: 0
   attackActive: 0
   attackDurationTimer: 0
   maxAttackDuration: 30
   locationIdentifier: 2
   NAB_AmountText: {fileID: 1714944834}
   TempAttackLocationIndicator: {fileID: 1467095163}
+  attackSound: {fileID: 8300000, guid: 9cc928e8d79b56e4080140935626548a, type: 3}
+  initialAttackSound: {fileID: 8300000, guid: 25ad0cf6dfa4356498b883ce50117094, type: 3}
 --- !u!65 &106291709
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -94803,13 +94805,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
   areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
-  NAB_Required: 1
+  NAB_Required: 0
   attackActive: 0
   attackDurationTimer: 0
   maxAttackDuration: 30
   locationIdentifier: 0
   NAB_AmountText: {fileID: 1714944834}
   TempAttackLocationIndicator: {fileID: 1135759259}
+  attackSound: {fileID: 8300000, guid: 9cc928e8d79b56e4080140935626548a, type: 3}
+  initialAttackSound: {fileID: 8300000, guid: 25ad0cf6dfa4356498b883ce50117094, type: 3}
 --- !u!65 &329166156
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -102605,13 +102609,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
   areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
-  NAB_Required: 1
+  NAB_Required: 0
   attackActive: 0
   attackDurationTimer: 0
   maxAttackDuration: 30
   locationIdentifier: 1
   NAB_AmountText: {fileID: 1714944834}
   TempAttackLocationIndicator: {fileID: 31554866}
+  attackSound: {fileID: 8300000, guid: 9cc928e8d79b56e4080140935626548a, type: 3}
+  initialAttackSound: {fileID: 8300000, guid: 25ad0cf6dfa4356498b883ce50117094, type: 3}
 --- !u!65 &745119594
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -123632,7 +123638,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: ba6660d2ac840a647919832abffe912c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -132929,11 +132935,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1972140722}
-  - component: {fileID: 1972140723}
   - component: {fileID: 1972140721}
   - component: {fileID: 1972140720}
   - component: {fileID: 1972140725}
   - component: {fileID: 1972140724}
+  - component: {fileID: 1972140726}
   m_Layer: 0
   m_Name: AttackSystemScript
   m_TagString: AttackControllerObject
@@ -132985,21 +132991,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1972140723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1972140719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf73b37c919b74948acad86e517685bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AttackSystem
-  attackAreasParent: {fileID: 1967313262}
-  areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
-  _textOffsetY: 1
 --- !u!114 &1972140724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133028,6 +133019,20 @@ MonoBehaviour:
   gameOverCanvas: {fileID: 1261750872}
   winCanvas: {fileID: 505279830}
   playerMap: {fileID: 7319692435509113358}
+--- !u!114 &1972140726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972140719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea104be77c07ee4419ce5327ad65ad64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackAreaMusic
+  musicPlayer: {fileID: 3310415520796346917, guid: 1773291b8f617fa4eac65b88bf08ca0f, type: 3}
+  sfxPlayer: {fileID: 2070268251731237160, guid: 05e02a1ebe7e8e14b939fa7efca1cbe2, type: 3}
 --- !u!1001 &1973640331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -137848,7 +137853,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: c58e48ada55a94b4faaea50f859d06b9, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.255
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0

@@ -10,12 +10,14 @@ public class AttackLocation : MonoBehaviour
     private TextMeshProUGUI attackTimerText;
     private Camera _mainCamera;
     [SerializeField] private int NAB_Required;
-    [SerializeField] private bool attackActive;
+    [SerializeField] public bool attackActive;
     [SerializeField] private float attackDurationTimer; //current time
     [SerializeField] private float maxAttackDuration; //starting time
     [SerializeField] private int locationIdentifier;
     [SerializeField] public Text NAB_AmountText;
     [SerializeField] public GameObject TempAttackLocationIndicator;
+    [SerializeField] public AudioClip attackSound;
+    [SerializeField] public AudioClip initialAttackSound;
     void Start()
     {
         attackDurationTimer = maxAttackDuration;
@@ -27,12 +29,17 @@ public class AttackLocation : MonoBehaviour
         attackActive = true;
         attackDurationTimer = maxAttackDuration;
         TempAttackLocationIndicator.SetActive(true);
+        AttackAreaMusic.instance.PlaySFX(initialAttackSound, transform, 1);
+        AttackAreaMusic.instance.PlayMusic(attackSound, transform, 1, true, locationIdentifier);
     }
 
     public void DecativateAttack()
     {
         attackActive = false;
         TempAttackLocationIndicator.SetActive(false);
+        AttackAreaMusic.instance.PlayMusic(attackSound, transform, 1, false, locationIdentifier);
+        attackDurationTimer = maxAttackDuration;
+        Destroy(areaTimerClone);
     }
 
     public int GetLocationIdentifier()

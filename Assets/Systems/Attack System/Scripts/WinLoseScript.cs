@@ -33,7 +33,7 @@ public class WinLoseScript : MonoBehaviour
     public void ShowWinScreen(bool toggle)
     {
         playerMap.actions.Disable();
-        gameObject.GetComponent<AttackSystem>().enabled = false;
+        gameObject.GetComponent<AttackController>().enabled = false;
         winCanvas.SetActive(toggle);
         Time.timeScale = 0f;
         if (GameObject.FindWithTag("Game UI") != null)
