@@ -18,6 +18,9 @@ public class AttackLocation : MonoBehaviour
     [SerializeField] public GameObject TempAttackLocationIndicator;
     [SerializeField] public AudioClip attackSound;
     [SerializeField] public AudioClip initialAttackSound;
+    [SerializeField] private int capsuleOffsetx;
+    [SerializeField] private int capsuleOffsety;
+    [SerializeField] private int capsuleOffsetz;
     void Start()
     {
         attackDurationTimer = maxAttackDuration;
@@ -29,6 +32,7 @@ public class AttackLocation : MonoBehaviour
         attackActive = true;
         attackDurationTimer = maxAttackDuration;
         TempAttackLocationIndicator.SetActive(true);
+        SpawnCapsule.instance.Activate(transform, locationIdentifier, capsuleOffsetx, capsuleOffsety, capsuleOffsetz);
         AttackAreaMusic.instance.PlaySFX(initialAttackSound, transform, 1);
         AttackAreaMusic.instance.PlayMusic(attackSound, transform, 1, true, locationIdentifier);
     }
@@ -37,6 +41,7 @@ public class AttackLocation : MonoBehaviour
     {
         attackActive = false;
         TempAttackLocationIndicator.SetActive(false);
+        SpawnCapsule.instance.Deactivate(locationIdentifier);
         AttackAreaMusic.instance.PlayMusic(attackSound, transform, 1, false, locationIdentifier);
         attackDurationTimer = maxAttackDuration;
         Destroy(areaTimerClone);
