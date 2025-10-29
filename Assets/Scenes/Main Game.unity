@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 1155094}
   - component: {fileID: 1155093}
   m_Layer: 5
-  m_Name: MainMenu
+  m_Name: MainMenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1338,7 +1338,7 @@ GameObject:
   - component: {fileID: 45012553}
   - component: {fileID: 45012552}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MainMenuText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3355,7 +3355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
   areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
-  NAB_Required: 0
+  NAB_Required: 1
   attackActive: 0
   attackDurationTimer: 0
   maxAttackDuration: 30
@@ -3364,7 +3364,7 @@ MonoBehaviour:
   MiniMapAttackLocationDot: {fileID: 1142837316}
   attackSound: {fileID: 8300000, guid: 9cc928e8d79b56e4080140935626548a, type: 3}
   initialAttackSound: {fileID: 8300000, guid: 25ad0cf6dfa4356498b883ce50117094, type: 3}
-  capsuleOffsetx: -2
+  capsuleOffsetx: 0
   capsuleOffsety: 0
   capsuleOffsetz: 0
 --- !u!65 &106291709
@@ -93757,7 +93757,7 @@ GameObject:
   - component: {fileID: 297797948}
   - component: {fileID: 297797947}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: PauseHeader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94249,7 +94249,7 @@ GameObject:
   - component: {fileID: 312614630}
   - component: {fileID: 312614629}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MainMenuText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94714,7 +94714,7 @@ GameObject:
   - component: {fileID: 329166155}
   - component: {fileID: 329166159}
   m_Layer: 10
-  m_Name: FoyerAttack
+  m_Name: EntranceAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94748,7 +94748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
   areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
-  NAB_Required: 0
+  NAB_Required: 1
   attackActive: 0
   attackDurationTimer: 0
   maxAttackDuration: 30
@@ -94759,7 +94759,7 @@ MonoBehaviour:
   initialAttackSound: {fileID: 8300000, guid: 25ad0cf6dfa4356498b883ce50117094, type: 3}
   capsuleOffsetx: 0
   capsuleOffsety: 0
-  capsuleOffsetz: -2
+  capsuleOffsetz: 0
 --- !u!65 &329166156
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -102685,7 +102685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
   areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
-  NAB_Required: 0
+  NAB_Required: 1
   attackActive: 0
   attackDurationTimer: 0
   maxAttackDuration: 30
@@ -102696,7 +102696,7 @@ MonoBehaviour:
   initialAttackSound: {fileID: 8300000, guid: 25ad0cf6dfa4356498b883ce50117094, type: 3}
   capsuleOffsetx: 0
   capsuleOffsety: 0
-  capsuleOffsetz: 2
+  capsuleOffsetz: 0
 --- !u!65 &745119594
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -106167,7 +106167,7 @@ GameObject:
   - component: {fileID: 925067479}
   - component: {fileID: 925067478}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: QuitGameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108455,7 +108455,7 @@ GameObject:
   - component: {fileID: 1028535302}
   - component: {fileID: 1028535301}
   m_Layer: 5
-  m_Name: MainMenu
+  m_Name: MainMenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110567,7 +110567,7 @@ GameObject:
   - component: {fileID: 1142465895}
   - component: {fileID: 1142465894}
   m_Layer: 5
-  m_Name: Image
+  m_Name: BackGroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111977,7 +111977,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1163925696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128392,7 +128392,7 @@ GameObject:
   - component: {fileID: 1709024138}
   - component: {fileID: 1709024137}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: ResumeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131009,7 +131009,7 @@ GameObject:
   - component: {fileID: 1885073009}
   - component: {fileID: 1885073008}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MainMenuText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137973,7 +137973,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: c58e48ada55a94b4faaea50f859d06b9, type: 3}
+  m_Resource: {fileID: 8300000, guid: ea5f5cff164df134f8c21ef72db52b75, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.1
   m_Pitch: 1
@@ -138070,7 +138070,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 955f798ecb6a19d4588aa33bb9a416d1, type: 3}
+  m_Resource: {fileID: 8300000, guid: c977f97f3b33a0542bb54eb2dd72348d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.213
   m_Pitch: 1
@@ -138166,7 +138166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5671540149470769969}
   m_Layer: 0
-  m_Name: NestedParent_Unpack
+  m_Name: PlayerCapsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
