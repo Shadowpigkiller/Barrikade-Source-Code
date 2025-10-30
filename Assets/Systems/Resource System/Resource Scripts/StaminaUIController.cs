@@ -9,7 +9,7 @@ public class StaminaUIController : MonoBehaviour
     void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        spineSprite = Resources.LoadAll<Sprite>("Resource UI Sprites/StaminaSprites");
+        spineSprite = Resources.LoadAll<Sprite>("StaminaSprites");
     }
     public Sprite ChangeSprite(int _index)
     {
