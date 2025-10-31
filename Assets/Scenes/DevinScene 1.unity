@@ -81861,7 +81861,7 @@ GameObject:
   - component: {fileID: 1868800396}
   - component: {fileID: 1868800395}
   - component: {fileID: 1868800394}
-  - component: {fileID: 1868800393}
+  - component: {fileID: 1868800397}
   - component: {fileID: 1868800392}
   m_Layer: 5
   m_Name: MiniMapUI
@@ -81909,19 +81909,6 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
---- !u!114 &1868800393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1868800390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d5c1a8aa7b021c4eb463d61cb3d3ea9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MiniMapBehavior
-  MiniMapGroup: {fileID: 1868800392}
 --- !u!114 &1868800394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81985,6 +81972,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1868800397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868800390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d5c1a8aa7b021c4eb463d61cb3d3ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MiniMapBehavior
+  MiniMapGroup: {fileID: 1868800392}
 --- !u!1 &1868950918
 GameObject:
   m_ObjectHideFlags: 0
