@@ -25,8 +25,6 @@ public class AttackLocation : MonoBehaviour
     [SerializeField] private float timerOffsetx;
     [SerializeField] private float timerOffsety;
     [SerializeField] private float timerOffsetz;
-    [SerializeField] private Quaternion timerRotation;
-    [SerializeField] private Vector3 timerScale;
     void Start()
     {
         attackDurationTimer = maxAttackDuration;
@@ -73,8 +71,7 @@ public class AttackLocation : MonoBehaviour
         //Create timer for attack area if one doesn't exist
         if (areaTimerClone == null)
         {
-            areaTimerClone = Instantiate(areaTimer, new Vector3(gameObject.transform.position.x + timerOffsetx, gameObject.transform.position.y + 1f + timerOffsety, gameObject.transform.position.z + timerOffsetz), timerRotation, gameObject.transform);
-            areaTimerClone.transform.localScale = timerScale;
+            areaTimerClone = Instantiate(areaTimer, new Vector3(gameObject.transform.position.x + timerOffsetx, gameObject.transform.position.y + 1f + timerOffsety, gameObject.transform.position.z + timerOffsetz), gameObject.transform.rotation, gameObject.transform);
             attackTimerText = areaTimerClone.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         }
 
