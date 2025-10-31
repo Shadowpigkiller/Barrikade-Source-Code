@@ -4891,7 +4891,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -125}
+  m_AnchoredPosition: {x: 0, y: -107.838745}
   m_SizeDelta: {x: 556.566, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &128831595
@@ -15879,6 +15879,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OverallCountDownTimer
   winTimer: {fileID: 364065315}
+  backgroundMusic: {fileID: 1539449357}
+  stage1: {fileID: 8300000, guid: ba6660d2ac840a647919832abffe912c, type: 3}
+  stage2: {fileID: 8300000, guid: f6c6ce14a948b184db00c0c9f00d82c3, type: 3}
+  stage3: {fileID: 8300000, guid: b896b009d2b9ea54597e5befc16652d3, type: 3}
 --- !u!114 &412248560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15907,8 +15911,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackController
   attackLocationsParent: {fileID: 1424748511}
-  attackInitiatorTimer: 8
-  maxAttackInitiatorTimer: 8
+  attackInitiatorTimer: 7
+  maxAttackInitiatorTimer: 7
 --- !u!114 &412248562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46665,7 +46669,7 @@ MonoBehaviour:
   NAB_Required: 1
   attackActive: 0
   attackDurationTimer: 0
-  maxAttackDuration: 30
+  maxAttackDuration: 20
   locationIdentifier: 1
   NAB_AmountText: {fileID: 557245421}
   MiniMapAttackLocationDot: {fileID: 405232182}
@@ -48697,7 +48701,7 @@ MonoBehaviour:
   NAB_Required: 1
   attackActive: 0
   attackDurationTimer: 0
-  maxAttackDuration: 30
+  maxAttackDuration: 20
   locationIdentifier: 2
   NAB_AmountText: {fileID: 557245421}
   MiniMapAttackLocationDot: {fileID: 1643587876}
@@ -59661,8 +59665,8 @@ MonoBehaviour:
   maxStamina: 120
   weAreSprinting: 0
   hasRegenerated: 1
-  staminaDrain: 27.1
-  staminaRegen: 17.3
+  staminaDrain: 25.6
+  staminaRegen: 24.4
   staminaProgressUI: {fileID: 1971186887}
   _staminaUIController: {fileID: 1971186885}
   unlockSprint: 1
@@ -59911,6 +59915,10 @@ PrefabInstance:
     - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
       propertyPath: capsuleOffsetz
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
+      propertyPath: maxAttackDuration
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
       propertyPath: locationIdentifier
@@ -65786,6 +65794,10 @@ PrefabInstance:
       propertyPath: NAB_AmountText
       value: 
       objectReference: {fileID: 557245421}
+    - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
+      propertyPath: maxAttackDuration
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
       propertyPath: locationIdentifier
       value: 3
@@ -90746,6 +90758,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 557245421}
     - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
+      propertyPath: maxAttackDuration
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
       propertyPath: MiniMapAttackLocationDot
       value: 
       objectReference: {fileID: 148057997}
@@ -91028,13 +91044,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 6b911390c5825014e8377183a7837d3f, type: 2}
     - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: MoveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: SprintSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: sprintSound
       value: 
-      objectReference: {fileID: 1441763314}
+      objectReference: {fileID: 1441763315}
     - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: footstepsSound
       value: 
-      objectReference: {fileID: 1441763315}
+      objectReference: {fileID: 1441763314}
     - target: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_Name
       value: PlayerCapsule
