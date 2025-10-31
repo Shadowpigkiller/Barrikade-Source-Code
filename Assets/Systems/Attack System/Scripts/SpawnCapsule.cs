@@ -1,3 +1,4 @@
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 public class SpawnCapsule : MonoBehaviour
@@ -5,7 +6,6 @@ public class SpawnCapsule : MonoBehaviour
     public static SpawnCapsule instance;
     [SerializeField] GameObject playerCapsule;
     [HideInInspector] private GameObject[] capsuleLocations;
-
     private void Awake()
     {
         if (instance == null)

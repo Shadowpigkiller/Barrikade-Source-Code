@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using Unity.Collections;
 public class AttackLocation : MonoBehaviour
 {
     [SerializeField] private GameObject areaTimer;
@@ -21,6 +22,11 @@ public class AttackLocation : MonoBehaviour
     [SerializeField] private int capsuleOffsetx;
     [SerializeField] private int capsuleOffsety;
     [SerializeField] private int capsuleOffsetz;
+    [SerializeField] private float timerOffsetx;
+    [SerializeField] private float timerOffsety;
+    [SerializeField] private float timerOffsetz;
+    [SerializeField] private Quaternion timerRotation;
+    [SerializeField] private Vector3 timerScale;
     void Start()
     {
         attackDurationTimer = maxAttackDuration;
@@ -67,7 +73,8 @@ public class AttackLocation : MonoBehaviour
         //Create timer for attack area if one doesn't exist
         if (areaTimerClone == null)
         {
-            areaTimerClone = Instantiate(areaTimer, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 1f, gameObject.transform.position.z), transform.rotation, gameObject.transform);
+            areaTimerClone = Instantiate(areaTimer, new Vector3(gameObject.transform.position.x + timerOffsetx, gameObject.transform.position.y + 1f + timerOffsety, gameObject.transform.position.z + timerOffsetz), timerRotation, gameObject.transform);
+            areaTimerClone.transform.localScale = timerScale;
             attackTimerText = areaTimerClone.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         }
 
@@ -97,8 +104,8 @@ public class AttackLocation : MonoBehaviour
     }
 
     private void UpdateTimerCamera()
-    { 
-         //make text face camera
+    {
+        //make text face camera
         Vector3 directionToCamera = _mainCamera.transform.position - areaTimerClone.transform.position;
         directionToCamera.y = 0; //keep text upright
 
