@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     [HideInInspector] public CursorControl _cursorControl;
-
     void Start()
     {
         _cursorControl = new CursorControl();
@@ -12,16 +11,14 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        //CursorControl.CursorDeactivate();
+        CursorControl.CursorDeactivate();
         SceneManager.LoadScene(1);
-        //Time.timeScale = 1f;
-        /*
+        Time.timeScale = 1f;
         if (PlayerReference.Instance != null)
         {
             PlayerReference.Instance.gameObject.SetActive(true);
         }
-        */
-        //NAB_Player_Controller.SetNAB(0);
+        NAB_Player_Controller.SetNAB(0);
     }
 
     public void QuitGame()

@@ -6,7 +6,7 @@ public static class NAB_Player_Controller : object
 {
     [Header("Main Nails And Boards Parameters")]
     [SerializeField] private static int NAB_Amount = 0;
-    [SerializeField] private static int maxNAB_Amount = 5;
+    [SerializeField] private static int maxNAB_Amount = 7;
     //[SerializeField] public static Text NAB_AmountText;
     public static void AddNAB()
     {
