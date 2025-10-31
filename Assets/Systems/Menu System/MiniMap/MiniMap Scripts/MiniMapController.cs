@@ -43,10 +43,18 @@ public class MiniMapBehavior : MonoBehaviour
         Debug.Log("MiniMapController successfully bound to MiniMapToggle input");
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnEnable()
     {
+        StartCoroutine(WaitForPlayerRef());
+    }
 
+    void OnDisable()
+    {
+        if (_playerInput != null)
+        {
+            var minimapAction = _playerInput.actions["MiniMapToggle"];
+            minimapAction.performed -= ToggleMiniMap;
+        }
     }
 
     public void ToggleMiniMap(InputAction.CallbackContext callbackContext)
