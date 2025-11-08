@@ -14,7 +14,7 @@ public class AttackLocation : MonoBehaviour
     [SerializeField] public bool attackActive;
     [SerializeField] private float attackDurationTimer; //current time
     [SerializeField] private float maxAttackDuration; //starting time
-    [SerializeField] private int locationIdentifier;
+    [SerializeField] public int locationIdentifier;
     [SerializeField] public Text NAB_AmountText;
     [SerializeField] public GameObject MiniMapAttackLocationDot;
     [SerializeField] public AudioClip attackSound;
@@ -105,7 +105,12 @@ public class AttackLocation : MonoBehaviour
 
     public void OnInteract()
     {
-        if (NAB_Player_Controller.getNAB_Amount() >= NAB_Required)
+        if (UseItemScript.crossPressed)
+        {
+            UseItemScript.windowBlocked = locationIdentifier;
+            UseItemScript.crossPressed = false;
+        }
+        if (NAB_Player_Controller.getNAB_Amount() >= NAB_Required && attackActive)
         {
             DecativateAttack();
             NAB_Player_Controller.removeNAB(NAB_Required);

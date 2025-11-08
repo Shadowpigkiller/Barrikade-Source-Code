@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using Unity.VisualScripting;
+using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 
 public class UseItemScript : MonoBehaviour
@@ -24,6 +25,13 @@ public class UseItemScript : MonoBehaviour
     [SerializeField] float syringeMaxTime = 10;
     private float syringeIncrement = 0;
     public static bool revolver = false;
+    [Header("Crossed Nails values")]
+    public static bool crossedNails = false;
+    public static bool crossPressed = false;
+    private static bool crossNailsSelected = false;
+    public static int windowBlocked = -1;
+    [SerializeField] float crossBlockedMax = 15;
+    private float crossBlockIncrement = 0;
     GameObject playerObject;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -59,6 +67,23 @@ public class UseItemScript : MonoBehaviour
         {
             revolver = true;
         }
+
+        if (crossNailsSelected)
+        {
+            crossNailsSelected = false;
+            crossedNails = true;
+        }
+
+        if (windowBlocked > -1)
+        {
+            Debug.Log(crossBlockIncrement);
+            crossBlockIncrement += Time.deltaTime;
+            if (crossBlockIncrement >= crossBlockedMax)
+            {
+                crossBlockIncrement = 0;
+                windowBlocked = -1;
+            }
+        }
     }
 
     static public void UseItem(Items items)
@@ -74,8 +99,7 @@ public class UseItemScript : MonoBehaviour
             case Items.Revolver:
                 break;
             case Items.CrossedNails:
-                //If player is by attack location then it will get which location
-                //The players at and stop the timer
+                crossNailsSelected = true;
                 break;
             default:
                 break;
