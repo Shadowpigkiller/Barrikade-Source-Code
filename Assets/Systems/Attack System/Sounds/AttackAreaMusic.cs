@@ -20,7 +20,6 @@ public class AttackAreaMusic : MonoBehaviour
         //check if audio source exists and if the attack location is active
         if (active == false)
         {
-            Debug.Log(audioSources[location].gameObject.transform.position.x);
             Destroy(audioSources[location].gameObject);
         }
         else

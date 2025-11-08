@@ -13,6 +13,7 @@ public class StaminaController : MonoBehaviour
     [Header("Stamina Regen Parameters")]
     [Range(0, 50)][SerializeField] private float staminaDrain = 0.5f;
     [Range(0, 50)][SerializeField] private float staminaRegen = 0.5f;
+    private float originalStaminaDrainValue;
 
     [Header("Stamina UI Elements")]
     [SerializeField] private Image staminaProgressUI;
@@ -23,6 +24,7 @@ public class StaminaController : MonoBehaviour
     [HideInInspector] public bool unlockSprint = true;
     private void Start()
     {
+        originalStaminaDrainValue = staminaDrain;
         playerController = GetComponent<FirstPersonController>();
         _input = GetComponent<StarterAssetsInputs>();
     }
@@ -51,6 +53,8 @@ public class StaminaController : MonoBehaviour
 
     public void Sprinting()
     {
+        staminaDrain = UseItemScript.syringeActive ? UseItemScript.syringeDrain : originalStaminaDrainValue;
+        Debug.Log(playerStamina);
         if (hasRegenerated)
         {
             weAreSprinting = true;
