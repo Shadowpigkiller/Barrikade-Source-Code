@@ -36,19 +36,19 @@ public class InventoryScript : MonoBehaviour
         UseItemScript.Items collected = UseItemScript.Items.None;
         switch (item)
         {
-            case "Watch":
+            case "WatchItem":
                 value = 0;
                 collected = UseItemScript.Items.Watch;
                 break;
-            case "Syringe":
+            case "SyringeItem":
                 value = 1;
                 collected = UseItemScript.Items.Syringe;
                 break;
-            case "Revolver":
+            case "RevolverItem":
                 value = 2;
                 collected = UseItemScript.Items.Revolver;
                 break;
-            case "CrossedNails":
+            case "CrossedNailsItem":
                 value = 3;
                 collected = UseItemScript.Items.CrossedNails;
                 break;

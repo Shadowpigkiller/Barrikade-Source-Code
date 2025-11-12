@@ -9,7 +9,8 @@ public class CollectionScript : MonoBehaviour
         {
             if(playerInventory.inventory[0] == UseItemScript.Items.None || playerInventory.inventory[1] == UseItemScript.Items.None)
             {
-                playerInventory.CollectItem(gameObject.name);
+                playerInventory.CollectItem(gameObject.tag);
+                this.transform.parent.GetComponent<SpawnItem>().UpdateValues();
                 Destroy(gameObject);
             }
         }
