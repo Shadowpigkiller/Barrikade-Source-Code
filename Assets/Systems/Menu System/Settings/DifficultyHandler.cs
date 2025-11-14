@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DifficultyHandler : MonoBehaviour
 {
@@ -12,11 +13,25 @@ public class DifficultyHandler : MonoBehaviour
     }
 
     [SerializeField] public static Difficulties difficulty;
+    [SerializeField] public Difficulties diffInstance;
 
     private void Start()
     {
         difficulty = Difficulties.Easy;
         Debug.Log("Difficulty set to: Easy");
+    }
+
+    private void Update()
+    {
+        if (diffInstance != difficulty)
+        {
+            gameObject.GetComponent<Image>().color = Color.gray;
+
+        }
+        else
+        {
+            gameObject.GetComponent<Image>().color = Color.white;
+        }
     }
 
     public static void ChangeDifficulty(int diff)

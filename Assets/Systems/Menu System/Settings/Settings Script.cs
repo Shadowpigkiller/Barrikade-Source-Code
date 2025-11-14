@@ -49,17 +49,5 @@ public class SettingsScript : MonoBehaviour
                 SVXVolume = value;
                 break;
         }
-        
-    }
-
-    public void OnDropdownValueChanged(int value) //Dropdown Change Handler
-    {
-        switch (setting)
-        {
-            case SettingsList.Difficulty:
-                Debug.Log("Difficulty set to: " + value); //0 = Easy, 1 = Medium, 2 = Hard
-                DifficultyHandler.ChangeDifficulty(value);
-                break;
-        }
     }
 }
