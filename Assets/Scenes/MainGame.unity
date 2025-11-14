@@ -16106,7 +16106,7 @@ Transform:
   m_GameObject: {fileID: 427837403}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.89000034, y: 8, z: -10.27}
+  m_LocalPosition: {x: 0.89000034, y: 7.5, z: -10.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16967,7 +16967,7 @@ Transform:
   m_GameObject: {fileID: 461949341}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.77, y: 8, z: -22.31}
+  m_LocalPosition: {x: -11.77, y: 7.5, z: -22.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46532,7 +46532,7 @@ Transform:
   m_GameObject: {fileID: 1134522142}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.89, y: 8, z: -15.27}
+  m_LocalPosition: {x: 12.89, y: 7.5, z: -15.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -82032,7 +82032,7 @@ Transform:
   m_GameObject: {fileID: 1855182515}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.77, y: 8, z: -8.309999}
+  m_LocalPosition: {x: -16.77, y: 7.5, z: -8.309999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -83436,10 +83436,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemSpawnController
   items:
-  - {fileID: 8390141924157959606, guid: 618f60aca7418484b8e2adb84f245628, type: 3}
-  - {fileID: 7627839644762069078, guid: 29c13478ee671bf438574b841a548c2f, type: 3}
-  - {fileID: 8693838242119465128, guid: 5bbe673905954244aa45e4999595b05f, type: 3}
-  - {fileID: 3393175083991170584, guid: 07b94c541f3117f468ef973cb053d2b1, type: 3}
+  - {fileID: 112028627157255170, guid: 347544c5a15ba2b4fb3e580b39fc073d, type: 3}
+  - {fileID: 2846408622756646816, guid: 29c13478ee671bf438574b841a548c2f, type: 3}
+  - {fileID: 9183188937994201367, guid: 776e958ee372c1848893430b8414de36, type: 3}
+  - {fileID: 8986398016047916352, guid: 07b94c541f3117f468ef973cb053d2b1, type: 3}
   maxSpawnTimer: 5
   noRepeat: 
 --- !u!4 &1894440860 stripped

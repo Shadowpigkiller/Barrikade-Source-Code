@@ -34,7 +34,7 @@ public class InventoryUIScript : MonoBehaviour
                 showItemPrefab,
                 new Vector3(
                     transform.position.x,
-                    transform.position.y + 50,
+                    transform.position.y + 30,
                     transform.position.z),
                     Quaternion.identity,
                     transform
@@ -52,7 +52,7 @@ public class InventoryUIScript : MonoBehaviour
                 showItemPrefab,
                 new Vector3(
                     transform.position.x,
-                    transform.position.y - 50,
+                    transform.position.y - 30,
                     transform.position.z),
                     Quaternion.identity,
                     transform
