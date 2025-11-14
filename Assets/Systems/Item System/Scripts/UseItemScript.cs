@@ -28,7 +28,7 @@ public class UseItemScript : MonoBehaviour
     [Header("Crossed Nails values")]
     public static bool crossedNails = false;
     public static bool crossPressed = false;
-    private static bool crossNailsSelected = false;
+    public static bool crossNailsSelected = false;
     public static int windowBlocked = -1;
     [SerializeField] float crossBlockedMax = 15;
     private float crossBlockIncrement = 0;
@@ -99,7 +99,7 @@ public class UseItemScript : MonoBehaviour
             case Items.Revolver:
                 break;
             case Items.CrossedNails:
-                crossNailsSelected = true;
+                //crossNailsSelected = true;
                 break;
             default:
                 break;

@@ -54,7 +54,7 @@ public class StaminaController : MonoBehaviour
     public void Sprinting()
     {
         staminaDrain = UseItemScript.syringeActive ? UseItemScript.syringeDrain : originalStaminaDrainValue;
-        Debug.Log(playerStamina);
+        //Debug.Log(playerStamina);
         if (hasRegenerated)
         {
             weAreSprinting = true;

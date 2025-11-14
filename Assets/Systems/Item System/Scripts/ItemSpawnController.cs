@@ -21,7 +21,7 @@ public class ItemSpawnController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(spawnTimerIncrement);
+        //Debug.Log(spawnTimerIncrement);
         //Check if all area have an item in them
         if (!noRepeat.Contains(false))
         {

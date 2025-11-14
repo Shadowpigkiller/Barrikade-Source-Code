@@ -83441,7 +83441,7 @@ MonoBehaviour:
   - {fileID: 2846408622756646816, guid: 29c13478ee671bf438574b841a548c2f, type: 3}
   - {fileID: 9183188937994201367, guid: 776e958ee372c1848893430b8414de36, type: 3}
   - {fileID: 8986398016047916352, guid: 07b94c541f3117f468ef973cb053d2b1, type: 3}
-  maxSpawnTimer: 30
+  maxSpawnTimer: 5
   noRepeat: 
 --- !u!4 &1894440860 stripped
 Transform:

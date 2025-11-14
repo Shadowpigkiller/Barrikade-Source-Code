@@ -68,6 +68,20 @@ public class InventoryScript : MonoBehaviour
         _inventoryUIScript.ShowItems((int)inventory[0], (int)inventory[1]);
     }
 
+    void Update()
+    {
+        if(inventory[selector] == UseItemScript.Items.CrossedNails)
+        {
+            Debug.Log("selected");
+            UseItemScript.crossNailsSelected = true;
+        }
+        else
+        {
+            Debug.Log("not selected");
+            UseItemScript.crossNailsSelected = false;
+        }
+    }
+
     private void UseItems(InputAction.CallbackContext callbackContext)
     {
         UseItemScript.UseItem(inventory[selector]);
