@@ -23426,6 +23426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryUIScript
   showItemPrefab: {fileID: 1319830469639611877, guid: 2697f0e9f252cea4e9d01452ead3471c, type: 3}
+  offset: 35
 --- !u!222 &574230675
 CanvasRenderer:
   m_ObjectHideFlags: 0

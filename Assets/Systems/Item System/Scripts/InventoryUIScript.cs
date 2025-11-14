@@ -6,6 +6,7 @@ public class InventoryUIScript : MonoBehaviour
     [HideInInspector] private Sprite[] inventorySprite;
     [HideInInspector] private Sprite[] itemSprites;
     [SerializeField] GameObject showItemPrefab;
+    [SerializeField] int offset = 35;
     private GameObject[] slots;
     private Sprite currentSprite;
     private SpriteRenderer _spriteRenderer;
@@ -34,7 +35,7 @@ public class InventoryUIScript : MonoBehaviour
                 showItemPrefab,
                 new Vector3(
                     transform.position.x,
-                    transform.position.y + 30,
+                    transform.position.y + offset,
                     transform.position.z),
                     Quaternion.identity,
                     transform
@@ -52,7 +53,7 @@ public class InventoryUIScript : MonoBehaviour
                 showItemPrefab,
                 new Vector3(
                     transform.position.x,
-                    transform.position.y - 30,
+                    transform.position.y - offset,
                     transform.position.z),
                     Quaternion.identity,
                     transform
