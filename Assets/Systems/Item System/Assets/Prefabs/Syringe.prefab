@@ -60,6 +60,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 3293321902965274f9b536267c267b21, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 3293321902965274f9b536267c267b21, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ff8e1a18fd92d704bb3b30db0af3b36b, type: 2}
+    - target: {fileID: -7635826562936255635, guid: 3293321902965274f9b536267c267b21, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 61a0f173426fe204a976daacaaafc708, type: 2}
     - target: {fileID: 919132149155446097, guid: 3293321902965274f9b536267c267b21, type: 3}
       propertyPath: m_Name
       value: Syringe
