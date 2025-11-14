@@ -17,20 +17,20 @@ public class DifficultyHandler : MonoBehaviour
 
     private void Start()
     {
-        difficulty = Difficulties.Easy;
-        Debug.Log("Difficulty set to: Easy");
+        difficulty = Difficulties.Medium;
+        Debug.Log("Difficulty set to: Medium");
     }
 
     private void Update()
     {
         if (diffInstance != difficulty)
         {
-            gameObject.GetComponent<Image>().color = Color.gray;
+            gameObject.GetComponent<Image>().color = Color.white;
 
         }
         else
         {
-            gameObject.GetComponent<Image>().color = Color.white;
+            gameObject.GetComponent<Image>().color = Color.gray;
         }
     }
 
