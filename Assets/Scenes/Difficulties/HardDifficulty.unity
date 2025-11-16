@@ -15800,8 +15800,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackController
   attackLocationsParent: {fileID: 1424748511}
-  attackInitiatorTimer: 7
-  maxAttackInitiatorTimer: 7
+  attackInitiatorTimer: 5
+  maxAttackInitiatorTimer: 5
 --- !u!114 &412248562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36305,7 +36305,7 @@ MonoBehaviour:
   - {fileID: 2846408622756646816, guid: 29c13478ee671bf438574b841a548c2f, type: 3}
   - {fileID: 9183188937994201367, guid: 776e958ee372c1848893430b8414de36, type: 3}
   - {fileID: 8986398016047916352, guid: 07b94c541f3117f468ef973cb053d2b1, type: 3}
-  maxSpawnTimer: 30
+  maxSpawnTimer: 45
   noRepeat: 
 --- !u!114 &863512944
 MonoBehaviour:
@@ -36319,9 +36319,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f7402d80004c14597f63803d98ceaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UseItemScript
-  watchMaxTime: 5
-  syringeMaxTime: 10
-  crossBlockedMax: 15
+  watchMaxTime: 2
+  syringeMaxTime: 7
+  crossBlockedMax: 10
 --- !u!4 &863512945
 Transform:
   m_ObjectHideFlags: 0
@@ -47586,7 +47586,7 @@ MonoBehaviour:
   NAB_Required: 1
   attackActive: 0
   attackDurationTimer: 0
-  maxAttackDuration: 20
+  maxAttackDuration: 15
   locationIdentifier: 1
   NAB_AmountText: {fileID: 557245421}
   MiniMapAttackLocationDot: {fileID: 405232182}
@@ -49667,7 +49667,7 @@ MonoBehaviour:
   NAB_Required: 1
   attackActive: 0
   attackDurationTimer: 0
-  maxAttackDuration: 20
+  maxAttackDuration: 15
   locationIdentifier: 2
   NAB_AmountText: {fileID: 557245421}
   MiniMapAttackLocationDot: {fileID: 1643587876}
@@ -60618,7 +60618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
       propertyPath: maxAttackDuration
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
       propertyPath: locationIdentifier
@@ -66082,7 +66082,7 @@ PrefabInstance:
       objectReference: {fileID: 557245421}
     - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
       propertyPath: maxAttackDuration
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
       propertyPath: locationIdentifier
@@ -90282,7 +90282,7 @@ PrefabInstance:
       objectReference: {fileID: 557245421}
     - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
       propertyPath: maxAttackDuration
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
       propertyPath: MiniMapAttackLocationDot
