@@ -14,8 +14,11 @@ public class Interactor : MonoBehaviour
     private PlayerInput _playerInput;
     private Transform _transform;
     [SerializeField] GameObject playerCursor;
+
+    GameObject playerObject;
     private void Awake()
     {
+        playerObject = GameObject.Find("PlayerCapsule");
         _transform = transform;
         _playerInput = GetComponent<PlayerInput>();
     }
@@ -23,11 +26,13 @@ public class Interactor : MonoBehaviour
     private void OnEnable()
     {
         _playerInput.actions["Interact"].performed += DoInteract;
+        _playerInput.actions["UseItem"].performed += DoInteract;
     }
 
     private void OnDisable()
     {
         _playerInput.actions["Interact"].performed -= DoInteract;
+        _playerInput.actions["UseItem"].performed -= DoInteract;
     }
 
     private void Update()
@@ -43,6 +48,14 @@ public class Interactor : MonoBehaviour
     }
     private void DoInteract(InputAction.CallbackContext callbackContext)
     {
+        if (callbackContext.action == _playerInput.actions["UseItem"] && UseItemScript.crossedNails == true)
+        {
+            UseItemScript.crossedNails = false;
+            Debug.Log("callbacked");
+            UseItemScript.crossPressed = true;
+        }
+        
+        Debug.Log(callbackContext.action == _playerInput.actions["Interact"]);
         if (!Physics.Raycast(_transform.position + Vector3.up + (_transform.forward * 0.2f), _transform.forward, out var hit, 2.5f, interactableLayer)) return;
         if (!hit.transform.TryGetComponent(out IInteractable interactable)) return;
         interactable.Interact();
