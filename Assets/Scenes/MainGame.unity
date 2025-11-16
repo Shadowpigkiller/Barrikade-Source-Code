@@ -90678,8 +90678,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InventoryScript
   hasItem: 00000000
   inventory: 0000000000000000
-  inventorySlotSelected: {fileID: 0}
-  _inventoryUIScript: {fileID: 0}
+  inventorySlotSelected: {fileID: 1784832661}
+  _inventoryUIScript: {fileID: 1784832662}
 --- !u!1 &8520697277256294817
 GameObject:
   m_ObjectHideFlags: 0
