@@ -22,6 +22,7 @@ public class AttackLocation : MonoBehaviour
     [SerializeField] private int capsuleOffsetx;
     [SerializeField] private int capsuleOffsety;
     [SerializeField] private int capsuleOffsetz;
+    [SerializeField] private float capsuleRotation;
     [SerializeField] private float timerOffsetx;
     [SerializeField] private float timerOffsety;
     [SerializeField] private float timerOffsetz;
@@ -38,7 +39,7 @@ public class AttackLocation : MonoBehaviour
         attackActive = true;
         attackDurationTimer = maxAttackDuration;
         MiniMapAttackLocationDot.SetActive(true);
-        SpawnCapsule.instance.Activate(transform, locationIdentifier, capsuleOffsetx, capsuleOffsety, capsuleOffsetz);
+        SpawnCapsule.instance.Activate(transform, locationIdentifier, capsuleOffsetx, capsuleOffsety, capsuleOffsetz, capsuleRotation);
         AttackAreaMusic.instance.PlaySFX(initialAttackSound, transform, 1);
         AttackAreaMusic.instance.PlayMusic(attackSound, transform, 1, true, locationIdentifier);
     }
