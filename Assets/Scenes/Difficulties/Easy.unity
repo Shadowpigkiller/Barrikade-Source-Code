@@ -47670,6 +47670,7 @@ MonoBehaviour:
   capsuleOffsetx: 0
   capsuleOffsety: 0
   capsuleOffsetz: -1
+  capsuleRotation: 180
   timerOffsetx: 0
   timerOffsety: 0.8
   timerOffsetz: 0.3
@@ -49751,6 +49752,7 @@ MonoBehaviour:
   capsuleOffsetx: 0
   capsuleOffsety: 0
   capsuleOffsetz: -1
+  capsuleRotation: 90
   timerOffsetx: 0
   timerOffsety: 0.8
   timerOffsetz: 0.3

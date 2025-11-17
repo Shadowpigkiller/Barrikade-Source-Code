@@ -6470,6 +6470,7 @@ MonoBehaviour:
   capsuleOffsetx: 0
   capsuleOffsety: 0
   capsuleOffsetz: -1
+  capsuleRotation: 180
   timerOffsetx: 0
   timerOffsety: 0.8
   timerOffsetz: 0.3
@@ -15850,7 +15851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4d1715c6fbe3240862b864cb289edf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnCapsule
-  playerCapsule: {fileID: -6689036041284674117, guid: a49b5790131255746a45ea31370162e6, type: 3}
+  playerCapsule: {fileID: 8128668236925612103, guid: 62a4d512e60bc854b8648171cdb53fbe, type: 3}
 --- !u!114 &412248558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47780,6 +47781,7 @@ MonoBehaviour:
   capsuleOffsetx: 0
   capsuleOffsety: 0
   capsuleOffsetz: -1
+  capsuleRotation: 180
   timerOffsetx: 0
   timerOffsety: 0.8
   timerOffsetz: 0.3
@@ -49861,6 +49863,7 @@ MonoBehaviour:
   capsuleOffsetx: 0
   capsuleOffsety: 0
   capsuleOffsetz: -1
+  capsuleRotation: 90
   timerOffsetx: 0
   timerOffsety: 0.8
   timerOffsetz: 0.3
@@ -60800,6 +60803,10 @@ PrefabInstance:
     - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
       propertyPath: capsuleOffsetz
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
+      propertyPath: capsuleRotation
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
       propertyPath: maxAttackDuration
