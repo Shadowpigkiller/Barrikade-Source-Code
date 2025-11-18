@@ -12,6 +12,11 @@ TagManager:
   - KitchenAttack
   - LRAttack
   - FoyerAttack
+  - MiniMapUI
+  - WatchItem
+  - SyringeItem
+  - RevolverItem
+  - CrossedNailsItem
   layers:
   - Default
   - TransparentFX
@@ -24,7 +29,7 @@ TagManager:
   - 
   - 
   - Interactable
-  - 
+  - Collectable
   - 
   - 
   - 

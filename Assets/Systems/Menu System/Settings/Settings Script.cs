@@ -18,9 +18,9 @@ public class SettingsScript : MonoBehaviour
     //Reference Variables
     public SettingsList setting;
 
-
-    public static float musicVolume;
-    public static float SVXVolume;
+    public static int difficulty = 2;
+    public static float musicVolume = 1;
+    public static float SVXVolume = 1;
 
     //Functions
     private void Start()
@@ -49,5 +49,15 @@ public class SettingsScript : MonoBehaviour
                 SVXVolume = value;
                 break;
         }
+    }
+
+    public void setDifficulty(int value)
+    {
+        difficulty = value;
+    }
+
+    public static int getDifficulty()
+    {
+        return difficulty;
     }
 }

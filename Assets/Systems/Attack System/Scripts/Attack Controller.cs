@@ -36,7 +36,7 @@ public class AttackController : MonoBehaviour
     {
         
         int chosenAreaNum = Random.Range(0, attackLocations);
-        while (chosenAreaNum == noRepeat)
+        while (chosenAreaNum == noRepeat || chosenAreaNum == UseItemScript.windowBlocked)
         {
             chosenAreaNum = Random.Range(0, attackLocations);
         }

@@ -14,7 +14,7 @@ public class AttackLocation : MonoBehaviour
     [SerializeField] public bool attackActive;
     [SerializeField] private float attackDurationTimer; //current time
     [SerializeField] private float maxAttackDuration; //starting time
-    [SerializeField] private int locationIdentifier;
+    [SerializeField] public int locationIdentifier;
     [SerializeField] public Text NAB_AmountText;
     [SerializeField] public GameObject MiniMapAttackLocationDot;
     [SerializeField] public AudioClip attackSound;
@@ -22,11 +22,14 @@ public class AttackLocation : MonoBehaviour
     [SerializeField] private int capsuleOffsetx;
     [SerializeField] private int capsuleOffsety;
     [SerializeField] private int capsuleOffsetz;
+    [SerializeField] private float capsuleRotation;
     [SerializeField] private float timerOffsetx;
     [SerializeField] private float timerOffsety;
     [SerializeField] private float timerOffsetz;
+    GameObject playerObject;
     void Start()
     {
+        playerObject = GameObject.Find("PlayerCapsule");
         attackDurationTimer = maxAttackDuration;
         _mainCamera = Camera.main;
     }
@@ -36,7 +39,7 @@ public class AttackLocation : MonoBehaviour
         attackActive = true;
         attackDurationTimer = maxAttackDuration;
         MiniMapAttackLocationDot.SetActive(true);
-        SpawnCapsule.instance.Activate(transform, locationIdentifier, capsuleOffsetx, capsuleOffsety, capsuleOffsetz);
+        SpawnCapsule.instance.Activate(transform, locationIdentifier, capsuleOffsetx, capsuleOffsety, capsuleOffsetz, capsuleRotation);
         AttackAreaMusic.instance.PlaySFX(initialAttackSound, transform, 1);
         AttackAreaMusic.instance.PlayMusic(attackSound, transform, 1, true, locationIdentifier);
     }
@@ -60,7 +63,7 @@ public class AttackLocation : MonoBehaviour
     private void Update()
     {
         //Stop Counting if attack is not active
-        if (attackActive == true)
+        if (attackActive == true && !UseItemScript.watchActive)
         {
             UpdateTimer();
         }
@@ -80,7 +83,19 @@ public class AttackLocation : MonoBehaviour
         //Counts attack timer down and if it reaches 0 the player loses
         if (attackDurationTimer <= 0)
         {
-            GameObject.FindWithTag("AttackControllerObject").GetComponent<WinLoseScript>().ShowLoseScreen(true);
+            if (UseItemScript.revolver)
+            {
+                UseItemScript.revolver = false;
+                int selector = playerObject.GetComponent<InventoryScript>().inventory[0] == UseItemScript.Items.Revolver ? 0 : 1;
+                playerObject.GetComponent<InventoryScript>().inventory[selector] = UseItemScript.Items.None;
+                GameObject.Find("Inventory").GetComponent<InventoryUIScript>().RemoveItems(selector);
+                DecativateAttack();
+            }
+            else
+            {
+                GameObject.FindWithTag("AttackControllerObject").GetComponent<WinLoseScript>().ShowLoseScreen(true);
+            }
+            
         }
         else
         {
@@ -91,7 +106,12 @@ public class AttackLocation : MonoBehaviour
 
     public void OnInteract()
     {
-        if (NAB_Player_Controller.getNAB_Amount() >= NAB_Required)
+        if (UseItemScript.crossPressed)
+        {
+            UseItemScript.windowBlocked = locationIdentifier;
+            UseItemScript.crossPressed = false;
+        }
+        if (NAB_Player_Controller.getNAB_Amount() >= NAB_Required && attackActive)
         {
             DecativateAttack();
             NAB_Player_Controller.removeNAB(NAB_Required);
