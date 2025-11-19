@@ -81,7 +81,7 @@ namespace StarterAssets
 
 		public void StopMovement()
 		{
-			if (PauseMenuButtons.IsPausedCheck())
+			if (PauseMenuButtons.IsPausedCheck() || TutorialController.IsPausedCheck() == true)
 			{
 				move.x = move.y = look.x = look.y = 0.0f;
 			}
