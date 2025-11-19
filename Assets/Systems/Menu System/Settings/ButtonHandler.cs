@@ -1,3 +1,4 @@
+//using UnityEditor.SettingsManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +7,7 @@ public class ButtonHandler : MonoBehaviour
     public GameObject EasyButton;
     public GameObject MediumButton;
     public GameObject HardButton;
+    public GameObject NIGHTMAREButton;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,9 +19,13 @@ public class ButtonHandler : MonoBehaviour
         {
             MediumButton.GetComponent<Button>().interactable = false;
         }
-        else
+        else if (SettingsScript.getDifficulty() == 3)
         {
             HardButton.GetComponent<Button>().interactable = false;
+        }
+        else
+        {
+            NIGHTMAREButton.GetComponent<Button>().interactable = false;
         }
     }
 
