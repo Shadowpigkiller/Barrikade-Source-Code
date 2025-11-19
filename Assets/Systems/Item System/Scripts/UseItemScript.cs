@@ -33,6 +33,7 @@ public class UseItemScript : MonoBehaviour
     [SerializeField] float crossBlockedMax = 15;
     private float crossBlockIncrement = 0;
     GameObject playerObject;
+    [SerializeField] public AttackLocation attackLocationScript;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -80,6 +81,7 @@ public class UseItemScript : MonoBehaviour
             crossBlockIncrement += Time.deltaTime;
             if (crossBlockIncrement >= crossBlockedMax)
             {
+                attackLocationScript.CrossedNailOutline(false, windowBlocked);
                 crossBlockIncrement = 0;
                 windowBlocked = -1;
             }

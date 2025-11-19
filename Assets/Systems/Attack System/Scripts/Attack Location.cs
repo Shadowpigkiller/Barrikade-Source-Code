@@ -4,9 +4,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using Unity.Collections;
+using System.Collections.Generic;
 public class AttackLocation : MonoBehaviour
 {
     [SerializeField] private GameObject areaTimer;
+    private GameObject[] models3d = new GameObject[5];
+    [SerializeField] private Material outline;
+    [SerializeField] private Material crossedNailOutline;
+    private Material[] newMaterialsEntrance;
+    private Material[] oldMaterialsEntrance;
+    private Material[] newMaterialwindow;
+    private Material[] oldMaterialwindow;
     private GameObject areaTimerClone;
     private TextMeshProUGUI attackTimerText;
     private Camera _mainCamera;
@@ -32,11 +40,28 @@ public class AttackLocation : MonoBehaviour
         playerObject = GameObject.Find("PlayerCapsule");
         attackDurationTimer = maxAttackDuration;
         _mainCamera = Camera.main;
+        
+        models3d[0] = GameObject.FindGameObjectWithTag("EA");
+        models3d[1] = GameObject.FindGameObjectWithTag("LRA1");
+        models3d[2] = GameObject.FindGameObjectWithTag("KA");
+        models3d[3] = GameObject.FindGameObjectWithTag("LRA2");
+        models3d[4] = GameObject.FindGameObjectWithTag("EBA");
+
+        oldMaterialsEntrance = models3d[0].GetComponent<MeshRenderer>().materials;
+        newMaterialsEntrance = models3d[0].GetComponent<MeshRenderer>().materials;
+        newMaterialsEntrance[1] = outline;
+
+        oldMaterialwindow = models3d[1].GetComponent<MeshRenderer>().materials;
+        newMaterialwindow = models3d[1].GetComponent<MeshRenderer>().materials;
+        newMaterialwindow[0] = outline;
+        newMaterialwindow[1] = outline;
+        
     }
 
     public void ActivateAttack()
     {
         attackActive = true;
+        ChangeOutline(true);
         attackDurationTimer = maxAttackDuration;
         MiniMapAttackLocationDot.SetActive(true);
         SpawnCapsule.instance.Activate(transform, locationIdentifier, capsuleOffsetx, capsuleOffsety, capsuleOffsetz, capsuleRotation);
@@ -47,6 +72,7 @@ public class AttackLocation : MonoBehaviour
     public void DecativateAttack()
     {
         attackActive = false;
+        ChangeOutline(false);
         MiniMapAttackLocationDot.SetActive(false);
         SpawnCapsule.instance.Deactivate(locationIdentifier);
         AttackAreaMusic.instance.PlayMusic(attackSound, transform, 1, false, locationIdentifier);
@@ -109,6 +135,7 @@ public class AttackLocation : MonoBehaviour
         if (UseItemScript.crossPressed)
         {
             UseItemScript.windowBlocked = locationIdentifier;
+            CrossedNailOutline(true, UseItemScript.windowBlocked);
             UseItemScript.crossPressed = false;
         }
         if (NAB_Player_Controller.getNAB_Amount() >= NAB_Required && attackActive)
@@ -128,5 +155,56 @@ public class AttackLocation : MonoBehaviour
 
         Quaternion targetRotation = Quaternion.LookRotation(-directionToCamera, Vector3.up);
         areaTimerClone.transform.rotation = targetRotation;
+    }
+
+    private void ChangeOutline(bool active)
+    {
+        if (active)
+        {
+            if (locationIdentifier > 1)
+            {
+                models3d[locationIdentifier].GetComponent<MeshRenderer>().materials = newMaterialwindow;
+            } else
+            {
+                models3d[locationIdentifier].GetComponent<MeshRenderer>().materials = newMaterialsEntrance;
+            }
+        } else
+        {
+            if (locationIdentifier > 1)
+            {
+                models3d[locationIdentifier].GetComponent<MeshRenderer>().materials = oldMaterialwindow;
+            } else
+            {
+                models3d[locationIdentifier].GetComponent<MeshRenderer>().materials = oldMaterialsEntrance;
+            }
+        }
+    }
+    public void CrossedNailOutline(bool active, int location)
+    {
+        if (active)
+        {
+            if (location > 1)
+            {
+                newMaterialwindow[0] = crossedNailOutline;
+                newMaterialwindow[1] = crossedNailOutline;
+                models3d[location].GetComponent<MeshRenderer>().materials = newMaterialwindow;
+            } else
+            {
+                newMaterialsEntrance[1] = crossedNailOutline;
+                models3d[location].GetComponent<MeshRenderer>().materials = newMaterialsEntrance;
+            }
+        } else
+        {
+            if (location > 1)
+            {
+                newMaterialwindow[0] = outline;
+                newMaterialwindow[1] = outline;
+                models3d[location].GetComponent<MeshRenderer>().materials = oldMaterialwindow;
+            } else
+            {
+                newMaterialsEntrance[1] = outline;
+                models3d[location].GetComponent<MeshRenderer>().materials = oldMaterialsEntrance;
+            }
+        }
     }
 }
