@@ -72,12 +72,10 @@ public class InventoryScript : MonoBehaviour
     {
         if(inventory[selector] == UseItemScript.Items.CrossedNails)
         {
-            Debug.Log("selected");
             UseItemScript.crossNailsSelected = true;
         }
         else
         {
-            Debug.Log("not selected");
             UseItemScript.crossNailsSelected = false;
         }
     }

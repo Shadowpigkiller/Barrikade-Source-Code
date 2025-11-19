@@ -11955,9 +11955,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c5c5226453796a341821ada88875ddfe, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c5c5226453796a341821ada88875ddfe, type: 3}
+      propertyPath: 'm_Materials.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2100000, guid: fc7017441d744cf40bbb4da7647f08b0, type: 2}
     - target: {fileID: 919132149155446097, guid: c5c5226453796a341821ada88875ddfe, type: 3}
       propertyPath: m_Name
       value: TheGlassPanel (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5c5226453796a341821ada88875ddfe, type: 3}
+      propertyPath: m_TagString
+      value: LRA1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26453,9 +26465,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c5c5226453796a341821ada88875ddfe, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c5c5226453796a341821ada88875ddfe, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: -3758895450978747326, guid: c5c5226453796a341821ada88875ddfe, type: 3}
+    - target: {fileID: -7511558181221131132, guid: c5c5226453796a341821ada88875ddfe, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: -2929390261155410772, guid: c5c5226453796a341821ada88875ddfe, type: 3}
+    - target: {fileID: -7511558181221131132, guid: c5c5226453796a341821ada88875ddfe, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8556262120643298411, guid: c5c5226453796a341821ada88875ddfe, type: 3}
+    - target: {fileID: -7511558181221131132, guid: c5c5226453796a341821ada88875ddfe, type: 3}
+      propertyPath: 'm_Materials.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2100000, guid: fc7017441d744cf40bbb4da7647f08b0, type: 2}
     - target: {fileID: 919132149155446097, guid: c5c5226453796a341821ada88875ddfe, type: 3}
       propertyPath: m_Name
       value: TheGlassPanel (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5c5226453796a341821ada88875ddfe, type: 3}
+      propertyPath: m_TagString
+      value: LRA2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26785,6 +26821,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5c5226453796a341821ada88875ddfe, type: 3}
       propertyPath: m_Name
       value: TheGlassPanel (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5c5226453796a341821ada88875ddfe, type: 3}
+      propertyPath: m_TagString
+      value: EBA
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27927,6 +27967,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5c5226453796a341821ada88875ddfe, type: 3}
       propertyPath: m_Name
       value: TheGlassPanel (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5c5226453796a341821ada88875ddfe, type: 3}
+      propertyPath: m_TagString
+      value: KA
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -36322,6 +36366,7 @@ MonoBehaviour:
   watchMaxTime: 5
   syringeMaxTime: 10
   crossBlockedMax: 15
+  attackLocationScript: {fileID: 2005535924}
 --- !u!4 &863512945
 Transform:
   m_ObjectHideFlags: 0
@@ -45125,6 +45170,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e22cfd8cc554054ea9843c969ebe9f9, type: 3}
+--- !u!1 &1072461174 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c5c5226453796a341821ada88875ddfe, type: 3}
+  m_PrefabInstance: {fileID: 628775756}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1073268068
 GameObject:
   m_ObjectHideFlags: 0
@@ -47583,7 +47633,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
   areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
-  NAB_Required: 1
+  outline: {fileID: 2100000, guid: fc7017441d744cf40bbb4da7647f08b0, type: 2}
+  crossedNailOutline: {fileID: 2100000, guid: 5a938774097546c40ad9c8077a7bd187, type: 2}
+  NAB_Required: 0
   attackActive: 0
   attackDurationTimer: 0
   maxAttackDuration: 20
@@ -47595,6 +47647,7 @@ MonoBehaviour:
   capsuleOffsetx: 0
   capsuleOffsety: 0
   capsuleOffsetz: -1
+  capsuleRotation: 0
   timerOffsetx: 0
   timerOffsety: 0.8
   timerOffsetz: 0.3
@@ -49664,7 +49717,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
   areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
-  NAB_Required: 1
+  outline: {fileID: 2100000, guid: fc7017441d744cf40bbb4da7647f08b0, type: 2}
+  crossedNailOutline: {fileID: 2100000, guid: 5a938774097546c40ad9c8077a7bd187, type: 2}
+  NAB_Required: 0
   attackActive: 0
   attackDurationTimer: 0
   maxAttackDuration: 20
@@ -49676,6 +49731,7 @@ MonoBehaviour:
   capsuleOffsetx: 0
   capsuleOffsety: 0
   capsuleOffsetz: -1
+  capsuleRotation: 0
   timerOffsetx: 0
   timerOffsety: 0.8
   timerOffsetz: 0.3
@@ -51567,6 +51623,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1193965093}
     m_Modifications:
+    - target: {fileID: 285702973871925339, guid: 383ad2abc6918fe44a5598ed74ce5fd0, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 285702973871925339, guid: 383ad2abc6918fe44a5598ed74ce5fd0, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8bf32f6d29e104b4eab2cfb97eae0977, type: 2}
     - target: {fileID: 1819019616707731047, guid: 383ad2abc6918fe44a5598ed74ce5fd0, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -51611,6 +51675,22 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 4672601140955445325, guid: 383ad2abc6918fe44a5598ed74ce5fd0, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672601140955445325, guid: 383ad2abc6918fe44a5598ed74ce5fd0, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8bf32f6d29e104b4eab2cfb97eae0977, type: 2}
+    - target: {fileID: 5417916093662846240, guid: 383ad2abc6918fe44a5598ed74ce5fd0, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417916093662846240, guid: 383ad2abc6918fe44a5598ed74ce5fd0, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8bf32f6d29e104b4eab2cfb97eae0977, type: 2}
     - target: {fileID: 5418655950300553723, guid: 383ad2abc6918fe44a5598ed74ce5fd0, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -51627,6 +51707,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 5907490174748907463, guid: 383ad2abc6918fe44a5598ed74ce5fd0, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5907490174748907463, guid: 383ad2abc6918fe44a5598ed74ce5fd0, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8bf32f6d29e104b4eab2cfb97eae0977, type: 2}
     - target: {fileID: 6489995030684995185, guid: 383ad2abc6918fe44a5598ed74ce5fd0, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -60601,6 +60689,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 1424748512}
     m_Modifications:
     - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
+      propertyPath: model3d
+      value: 
+      objectReference: {fileID: 2033468411}
+    - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
+      propertyPath: outline
+      value: 
+      objectReference: {fileID: 2100000, guid: fc7017441d744cf40bbb4da7647f08b0, type: 2}
+    - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
+      propertyPath: NAB_Required
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
       propertyPath: timerOffsety
       value: 0.8
       objectReference: {fileID: 0}
@@ -60620,6 +60720,10 @@ PrefabInstance:
       propertyPath: maxAttackDuration
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
+      propertyPath: crossedNailOutline
+      value: 
+      objectReference: {fileID: 2100000, guid: 5a938774097546c40ad9c8077a7bd187, type: 2}
     - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
       propertyPath: locationIdentifier
       value: 4
@@ -66073,6 +66177,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 1424748512}
     m_Modifications:
     - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
+      propertyPath: model3d
+      value: 
+      objectReference: {fileID: 1072461174}
+    - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
+      propertyPath: outline
+      value: 
+      objectReference: {fileID: 2100000, guid: fc7017441d744cf40bbb4da7647f08b0, type: 2}
+    - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
+      propertyPath: NAB_Required
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
       propertyPath: timerOffsety
       value: 0.8
       objectReference: {fileID: 0}
@@ -66084,6 +66200,10 @@ PrefabInstance:
       propertyPath: maxAttackDuration
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
+      propertyPath: crossedNailOutline
+      value: 
+      objectReference: {fileID: 2100000, guid: 5a938774097546c40ad9c8077a7bd187, type: 2}
     - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
       propertyPath: locationIdentifier
       value: 3
@@ -86889,6 +87009,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5789079159513369589, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
   m_PrefabInstance: {fileID: 1459948318}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2005535924 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
+  m_PrefabInstance: {fileID: 1459948318}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d00a1e6df60b94da2a9df15471a215, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
 --- !u!1 &2014307914 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 37b993d55768d6548b79b49a7d864d4c, type: 3}
@@ -87255,6 +87386,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 480851390}
   m_SourcePrefab: {fileID: 100100000, guid: de4779926c8835f45b107fafc3025bef, type: 3}
+--- !u!1 &2033468411 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c5c5226453796a341821ada88875ddfe, type: 3}
+  m_PrefabInstance: {fileID: 675152734}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &2034346443
 Mesh:
   m_ObjectHideFlags: 0
@@ -87495,6 +87631,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8068073526183931155, guid: 6774b65ca0885a945b3ec8c9e2d78ad1, type: 3}
+      propertyPath: m_TagString
+      value: EA
+      objectReference: {fileID: 0}
+    - target: {fileID: -305091885687274788, guid: 6774b65ca0885a945b3ec8c9e2d78ad1, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -305091885687274788, guid: 6774b65ca0885a945b3ec8c9e2d78ad1, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: -5893160060819351940, guid: 6774b65ca0885a945b3ec8c9e2d78ad1, type: 3}
+    - target: {fileID: -305091885687274788, guid: 6774b65ca0885a945b3ec8c9e2d78ad1, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: -5893160060819351940, guid: 6774b65ca0885a945b3ec8c9e2d78ad1, type: 3}
+    - target: {fileID: -305091885687274788, guid: 6774b65ca0885a945b3ec8c9e2d78ad1, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: -5893160060819351940, guid: 6774b65ca0885a945b3ec8c9e2d78ad1, type: 3}
     - target: {fileID: 919132149155446097, guid: 6774b65ca0885a945b3ec8c9e2d78ad1, type: 3}
       propertyPath: m_Name
       value: Shattered Door
@@ -90277,6 +90433,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 1424748512}
     m_Modifications:
     - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
+      propertyPath: model3d
+      value: 
+      objectReference: {fileID: 1998710012}
+    - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
+      propertyPath: outline
+      value: 
+      objectReference: {fileID: 2100000, guid: fc7017441d744cf40bbb4da7647f08b0, type: 2}
+    - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
+      propertyPath: NAB_Required
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
       propertyPath: NAB_AmountText
       value: 
       objectReference: {fileID: 557245421}
@@ -90284,6 +90452,10 @@ PrefabInstance:
       propertyPath: maxAttackDuration
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
+      propertyPath: crossedNailOutline
+      value: 
+      objectReference: {fileID: 2100000, guid: 5a938774097546c40ad9c8077a7bd187, type: 2}
     - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
       propertyPath: MiniMapAttackLocationDot
       value: 
