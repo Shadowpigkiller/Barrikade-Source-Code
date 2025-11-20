@@ -9,6 +9,7 @@ public class AttackController : MonoBehaviour
     [SerializeField] private float maxAttackInitiatorTimer;
     [HideInInspector] private int attackLocations;
     [HideInInspector] private int noRepeat;
+    [SerializeField] public static AudioClip revolverSFX;
 
     void Start()
     {
@@ -34,7 +35,6 @@ public class AttackController : MonoBehaviour
 
     private void InitiateAttack()
     {
-        
         int chosenAreaNum = Random.Range(0, attackLocations);
         while (chosenAreaNum == noRepeat || chosenAreaNum == UseItemScript.windowBlocked)
         {
@@ -47,5 +47,11 @@ public class AttackController : MonoBehaviour
         {
             chosenArea.GetComponent<AttackLocation>().ActivateAttack();
         }
+    }
+
+    public void DeactivateCrossedOutlines(int location)
+    {
+        GameObject chosenArea = attackLocationsParent.transform.GetChild(location).gameObject;
+        chosenArea.GetComponent<AttackLocation>().CrossedNailOutline(false);
     }
 }

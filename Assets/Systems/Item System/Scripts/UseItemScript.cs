@@ -20,11 +20,15 @@ public class UseItemScript : MonoBehaviour
     private float watchIncrement = 0;
     [Header("Syringe Values")]
     public static bool syringeActive = false;
-    [SerializeField] public static float syringeSpeed = 1.3f;
-    [SerializeField] public static float syringeDrain = 10f;
+    [SerializeField] float syringeSpeedNonStatic = 1.3f;
+    public static float syringSpeed;
+    [SerializeField] float syringeDrainNonStatic = 10f;
+     public static float syringDrain;
     [SerializeField] float syringeMaxTime = 10;
     private float syringeIncrement = 0;
     public static bool revolver = false;
+    [SerializeField] public AudioClip revolverSFX;
+    public static AudioClip revolverSFXstatic;
     [Header("Crossed Nails values")]
     public static bool crossedNails = false;
     public static bool crossPressed = false;
@@ -33,12 +37,15 @@ public class UseItemScript : MonoBehaviour
     [SerializeField] float crossBlockedMax = 15;
     private float crossBlockIncrement = 0;
     GameObject playerObject;
-    [SerializeField] public AttackLocation attackLocationScript;
+    [SerializeField] public AttackController attackControllerScript;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerObject = GameObject.Find("PlayerCapsule");
+        revolverSFXstatic = revolverSFX;
+        syringDrain = syringeDrainNonStatic;
+        syringSpeed = syringeSpeedNonStatic;
     }
 
     void Update()
@@ -81,7 +88,7 @@ public class UseItemScript : MonoBehaviour
             crossBlockIncrement += Time.deltaTime;
             if (crossBlockIncrement >= crossBlockedMax)
             {
-                attackLocationScript.CrossedNailOutline(false, windowBlocked);
+                attackControllerScript.DeactivateCrossedOutlines(windowBlocked);
                 crossBlockIncrement = 0;
                 windowBlocked = -1;
             }
@@ -108,3 +115,4 @@ public class UseItemScript : MonoBehaviour
         }
     }
 }
+

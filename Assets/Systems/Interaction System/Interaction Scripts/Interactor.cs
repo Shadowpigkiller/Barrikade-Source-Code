@@ -54,7 +54,6 @@ public class Interactor : MonoBehaviour
             Debug.Log("callbacked");
             UseItemScript.crossPressed = true;
         }
-        
         Debug.Log(callbackContext.action == _playerInput.actions["Interact"]);
         if (!Physics.Raycast(_transform.position + Vector3.up + (_transform.forward * 0.2f), _transform.forward, out var hit, 2.5f, interactableLayer)) return;
         if (!hit.transform.TryGetComponent(out IInteractable interactable)) return;

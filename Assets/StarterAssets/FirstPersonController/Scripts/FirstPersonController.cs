@@ -169,7 +169,7 @@ namespace StarterAssets
 					{
 						footstepsSound.enabled = false;
 						sprintSound.enabled = true;
-						targetSpeed = UseItemScript.syringeActive ? SprintSpeed * UseItemScript.syringeSpeed: SprintSpeed;
+						targetSpeed = UseItemScript.syringeActive ? SprintSpeed * UseItemScript.syringSpeed: SprintSpeed;
 						_staminaController.weAreSprinting = true;
 						_staminaController.Sprinting();
 					}

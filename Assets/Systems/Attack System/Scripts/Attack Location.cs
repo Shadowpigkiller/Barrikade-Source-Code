@@ -8,7 +8,7 @@ using System.Collections.Generic;
 public class AttackLocation : MonoBehaviour
 {
     [SerializeField] private GameObject areaTimer;
-    private GameObject[] models3d = new GameObject[5];
+    [SerializeField] private GameObject models3d;
     [SerializeField] private Material outline;
     [SerializeField] private Material crossedNailOutline;
     private Material[] newMaterialsEntrance;
@@ -26,6 +26,7 @@ public class AttackLocation : MonoBehaviour
     [SerializeField] public Text NAB_AmountText;
     [SerializeField] public GameObject MiniMapAttackLocationDot;
     [SerializeField] public AudioClip attackSound;
+    [SerializeField] public AudioClip barrikade;
     [SerializeField] public AudioClip initialAttackSound;
     [SerializeField] private int capsuleOffsetx;
     [SerializeField] private int capsuleOffsety;
@@ -40,28 +41,21 @@ public class AttackLocation : MonoBehaviour
         playerObject = GameObject.Find("PlayerCapsule");
         attackDurationTimer = maxAttackDuration;
         _mainCamera = Camera.main;
-        /*
-        models3d[0] = GameObject.FindGameObjectWithTag("EA");
-        models3d[1] = GameObject.FindGameObjectWithTag("LRA1");
-        models3d[2] = GameObject.FindGameObjectWithTag("KA");
-        models3d[3] = GameObject.FindGameObjectWithTag("LRA2");
-        models3d[4] = GameObject.FindGameObjectWithTag("EBA");
 
-        oldMaterialsEntrance = models3d[0].GetComponent<MeshRenderer>().materials;
-        newMaterialsEntrance = models3d[0].GetComponent<MeshRenderer>().materials;
+        oldMaterialsEntrance = models3d.GetComponent<MeshRenderer>().materials;
+        newMaterialsEntrance = models3d.GetComponent<MeshRenderer>().materials;
         newMaterialsEntrance[1] = outline;
 
-        oldMaterialwindow = models3d[1].GetComponent<MeshRenderer>().materials;
-        newMaterialwindow = models3d[1].GetComponent<MeshRenderer>().materials;
+        oldMaterialwindow = models3d.GetComponent<MeshRenderer>().materials;
+        newMaterialwindow = models3d.GetComponent<MeshRenderer>().materials;
         newMaterialwindow[0] = outline;
         newMaterialwindow[1] = outline;
-        */
     }
 
     public void ActivateAttack()
     {
         attackActive = true;
-        //ChangeOutline(true);
+        ChangeOutline(true);
         attackDurationTimer = maxAttackDuration;
         MiniMapAttackLocationDot.SetActive(true);
         SpawnCapsule.instance.Activate(transform, locationIdentifier, capsuleOffsetx, capsuleOffsety, capsuleOffsetz, capsuleRotation);
@@ -72,7 +66,7 @@ public class AttackLocation : MonoBehaviour
     public void DecativateAttack()
     {
         attackActive = false;
-        //ChangeOutline(false);
+        ChangeOutline(false);
         MiniMapAttackLocationDot.SetActive(false);
         SpawnCapsule.instance.Deactivate(locationIdentifier);
         AttackAreaMusic.instance.PlayMusic(attackSound, transform, 1, false, locationIdentifier);
@@ -112,6 +106,7 @@ public class AttackLocation : MonoBehaviour
             if (UseItemScript.revolver)
             {
                 UseItemScript.revolver = false;
+                AttackAreaMusic.instance.PlaySFX(UseItemScript.revolverSFXstatic, transform, 1);
                 int selector = playerObject.GetComponent<InventoryScript>().inventory[0] == UseItemScript.Items.Revolver ? 0 : 1;
                 playerObject.GetComponent<InventoryScript>().inventory[selector] = UseItemScript.Items.None;
                 GameObject.Find("Inventory").GetComponent<InventoryUIScript>().RemoveItems(selector);
@@ -135,11 +130,12 @@ public class AttackLocation : MonoBehaviour
         if (UseItemScript.crossPressed)
         {
             UseItemScript.windowBlocked = locationIdentifier;
-            CrossedNailOutline(true, UseItemScript.windowBlocked);
+            CrossedNailOutline(true);
             UseItemScript.crossPressed = false;
         }
         if (NAB_Player_Controller.getNAB_Amount() >= NAB_Required && attackActive)
         {
+            AttackAreaMusic.instance.PlaySFX(barrikade, transform, 1);
             DecativateAttack();
             NAB_Player_Controller.removeNAB(NAB_Required);
             NAB_AmountText.text = Convert.ToString(NAB_Player_Controller.getNAB_Amount());
@@ -163,47 +159,47 @@ public class AttackLocation : MonoBehaviour
         {
             if (locationIdentifier > 1)
             {
-                models3d[locationIdentifier].GetComponent<MeshRenderer>().materials = newMaterialwindow;
+                models3d.GetComponent<MeshRenderer>().materials = newMaterialwindow;
             } else
             {
-                models3d[locationIdentifier].GetComponent<MeshRenderer>().materials = newMaterialsEntrance;
+                models3d.GetComponent<MeshRenderer>().materials = newMaterialsEntrance;
             }
         } else
         {
             if (locationIdentifier > 1)
             {
-                models3d[locationIdentifier].GetComponent<MeshRenderer>().materials = oldMaterialwindow;
+                models3d.GetComponent<MeshRenderer>().materials = oldMaterialwindow;
             } else
             {
-                models3d[locationIdentifier].GetComponent<MeshRenderer>().materials = oldMaterialsEntrance;
+                models3d.GetComponent<MeshRenderer>().materials = oldMaterialsEntrance;
             }
         }
     }
-    public void CrossedNailOutline(bool active, int location)
+    public void CrossedNailOutline(bool active)
     {
         if (active)
         {
-            if (location > 1)
+            if (locationIdentifier > 1)
             {
                 newMaterialwindow[0] = crossedNailOutline;
                 newMaterialwindow[1] = crossedNailOutline;
-                models3d[location].GetComponent<MeshRenderer>().materials = newMaterialwindow;
+                models3d.GetComponent<MeshRenderer>().materials = newMaterialwindow;
             } else
             {
                 newMaterialsEntrance[1] = crossedNailOutline;
-                models3d[location].GetComponent<MeshRenderer>().materials = newMaterialsEntrance;
+                models3d.GetComponent<MeshRenderer>().materials = newMaterialsEntrance;
             }
         } else
         {
-            if (location > 1)
+            if (locationIdentifier > 1)
             {
                 newMaterialwindow[0] = outline;
                 newMaterialwindow[1] = outline;
-                models3d[location].GetComponent<MeshRenderer>().materials = oldMaterialwindow;
+                models3d.GetComponent<MeshRenderer>().materials = oldMaterialwindow;
             } else
             {
                 newMaterialsEntrance[1] = outline;
-                models3d[location].GetComponent<MeshRenderer>().materials = oldMaterialsEntrance;
+                models3d.GetComponent<MeshRenderer>().materials = oldMaterialsEntrance;
             }
         }
     }
