@@ -7,7 +7,9 @@ public class TutorialController : MonoBehaviour
     [HideInInspector] public CursorControl _cursorControl;
     private static StarterAssetsInputs _playerMovement;
     private static bool isPaused = true;
-    
+    private static bool AttackPopUp = true;
+    [SerializeField] public GameObject AttackPopUpObject;
+    [SerializeField] public GameObject tutorialBackground;
     private PlayerInput _playerInput;
 
     void Awake()
@@ -36,11 +38,8 @@ public class TutorialController : MonoBehaviour
             }
         }
         isPaused = true;
+        PlayerReference.Instance.Player.GetComponent<FirstPersonController>().FreezePlayer();
         CursorControl.CursorActivate();
-        _playerMovement.StopMovement();
-        PlayerReference.Instance.Player.GetComponent<AudioSource>().enabled = false;
-        Time.timeScale = 0f;
-        Debug.Log("TutorialController Succesfully Ran");
     }
 
     IEnumerator WaitForPlayerRef()
@@ -68,6 +67,12 @@ public class TutorialController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (NAB_Player_Controller.getNAB_Amount() == 7 && AttackPopUp)
+        {
+            AttackPopUpObject.SetActive(true);
+            PlayerReference.Instance.Player.GetComponent<FirstPersonController>().FreezePlayer();
+            tutorialBackground.SetActive(true);
+            AttackPopUp = false;
+        }
     }
 }

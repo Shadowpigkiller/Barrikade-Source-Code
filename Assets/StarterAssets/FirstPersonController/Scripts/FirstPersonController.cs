@@ -243,5 +243,38 @@ namespace StarterAssets
 			// when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
 			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
 		}
+		public void FreezePlayer()
+		{
+			// Stop Starter Assets from relocking the cursor
+			var inputs = GetComponent<StarterAssetsInputs>();
+			inputs.cursorLocked = false;
+			inputs.cursorInputForLook = false;
+
+			// Disable input
+			GetComponent<PlayerInput>().enabled = false;
+			inputs.enabled = false;
+
+			// Stop movement script
+			enabled = false;
+
+			// Unlock cursor properly
+			Cursor.lockState = CursorLockMode.None;
+			Cursor.visible = true;
+		}
+
+		public void UnfreezePlayer()
+		{
+			var inputs = GetComponent<StarterAssetsInputs>();
+			inputs.cursorLocked = true;
+			inputs.cursorInputForLook = true;
+
+			GetComponent<PlayerInput>().enabled = true;
+			inputs.enabled = true;
+			enabled = true;
+
+			// Lock cursor for gameplay
+			Cursor.lockState = CursorLockMode.Locked;
+			Cursor.visible = false;
+		}
 	}
 }
