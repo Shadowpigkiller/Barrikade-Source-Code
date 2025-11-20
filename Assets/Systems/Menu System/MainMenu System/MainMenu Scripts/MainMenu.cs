@@ -14,6 +14,7 @@ public class MainMenu : MonoBehaviour
         int difficulty = SettingsScript.getDifficulty();
         CursorControl.CursorDeactivate();
         SceneManager.LoadScene(difficulty);
+        OverallCountDownTimer.SetTutorialTime(false);
         Time.timeScale = 1f;
         if (PlayerReference.Instance != null)
         {
