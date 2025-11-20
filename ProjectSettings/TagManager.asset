@@ -14,13 +14,10 @@ TagManager:
   - SyringeItem
   - RevolverItem
   - CrossedNailsItem
-  - LRA1
-  - LRA2
-  - KA
   - EA
-  - EBA
   - TutorialBackground
   - RedoOrPlay
+  - AttackArea
   layers:
   - Default
   - TransparentFX
