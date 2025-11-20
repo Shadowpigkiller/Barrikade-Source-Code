@@ -11964,6 +11964,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5c5226453796a341821ada88875ddfe, type: 3}
+--- !u!1 &286932276 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c5c5226453796a341821ada88875ddfe, type: 3}
+  m_PrefabInstance: {fileID: 286932275}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &297189545
 GameObject:
   m_ObjectHideFlags: 0
@@ -28237,6 +28242,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5c5226453796a341821ada88875ddfe, type: 3}
+--- !u!1 &710136045 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c5c5226453796a341821ada88875ddfe, type: 3}
+  m_PrefabInstance: {fileID: 710136044}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &710221210 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5355249877358433818, guid: 5e22cfd8cc554054ea9843c969ebe9f9, type: 3}
@@ -47888,8 +47898,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
   areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
-  outline: {fileID: 0}
-  crossedNailOutline: {fileID: 0}
+  models3d: {fileID: 286932276}
+  outline: {fileID: 2100000, guid: fc7017441d744cf40bbb4da7647f08b0, type: 2}
+  crossedNailOutline: {fileID: 2100000, guid: 5a938774097546c40ad9c8077a7bd187, type: 2}
   NAB_Required: 1
   attackActive: 0
   attackDurationTimer: 0
@@ -47898,6 +47909,7 @@ MonoBehaviour:
   NAB_AmountText: {fileID: 557245421}
   MiniMapAttackLocationDot: {fileID: 405232182}
   attackSound: {fileID: 8300000, guid: 9cc928e8d79b56e4080140935626548a, type: 3}
+  barrikade: {fileID: 8300000, guid: 3cb07e6aac5f013489404347fb403be8, type: 3}
   initialAttackSound: {fileID: 8300000, guid: 25ad0cf6dfa4356498b883ce50117094, type: 3}
   capsuleOffsetx: 0
   capsuleOffsety: 0
@@ -49972,8 +49984,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
   areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
-  outline: {fileID: 0}
-  crossedNailOutline: {fileID: 0}
+  models3d: {fileID: 710136045}
+  outline: {fileID: 2100000, guid: fc7017441d744cf40bbb4da7647f08b0, type: 2}
+  crossedNailOutline: {fileID: 2100000, guid: 5a938774097546c40ad9c8077a7bd187, type: 2}
   NAB_Required: 1
   attackActive: 0
   attackDurationTimer: 0
@@ -49982,6 +49995,7 @@ MonoBehaviour:
   NAB_AmountText: {fileID: 557245421}
   MiniMapAttackLocationDot: {fileID: 1643587876}
   attackSound: {fileID: 8300000, guid: 9cc928e8d79b56e4080140935626548a, type: 3}
+  barrikade: {fileID: 8300000, guid: 3cb07e6aac5f013489404347fb403be8, type: 3}
   initialAttackSound: {fileID: 8300000, guid: 25ad0cf6dfa4356498b883ce50117094, type: 3}
   capsuleOffsetx: 0
   capsuleOffsety: 0
@@ -90465,6 +90479,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 1424748512}
     m_Modifications:
     - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
+      propertyPath: outline
+      value: 
+      objectReference: {fileID: 2100000, guid: fc7017441d744cf40bbb4da7647f08b0, type: 2}
+    - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
+      propertyPath: models3d
+      value: 
+      objectReference: {fileID: 1998710012}
+    - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
+      propertyPath: barrikade
+      value: 
+      objectReference: {fileID: 8300000, guid: 3cb07e6aac5f013489404347fb403be8, type: 3}
+    - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
       propertyPath: NAB_AmountText
       value: 
       objectReference: {fileID: 557245421}
@@ -90472,6 +90498,10 @@ PrefabInstance:
       propertyPath: maxAttackDuration
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
+      propertyPath: crossedNailOutline
+      value: 
+      objectReference: {fileID: 2100000, guid: 5a938774097546c40ad9c8077a7bd187, type: 2}
     - target: {fileID: 2680486661444391386, guid: 230b49d8be9dbe74789898aebd1e567c, type: 3}
       propertyPath: MiniMapAttackLocationDot
       value: 
