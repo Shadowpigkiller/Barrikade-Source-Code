@@ -2,6 +2,8 @@ using UnityEngine;
 using StarterAssets;
 using UnityEngine.InputSystem;
 using System.Collections;
+using UnityEditor.PackageManager;
+using UnityEngine.SceneManagement;
 public class TutorialController : MonoBehaviour
 {
     [HideInInspector] public CursorControl _cursorControl;
@@ -11,7 +13,10 @@ public class TutorialController : MonoBehaviour
     [SerializeField] public GameObject AttackPopUpObject;
     [SerializeField] public GameObject tutorialBackground;
     private PlayerInput _playerInput;
-
+    [SerializeField] public GameObject itemPopUpOject;
+    [SerializeField] public GameObject RedoOrPlayObject;
+    private static bool ItemPopUp = false;
+    private static bool barrikadeSystemPopUpDone = false;
     void Awake()
     {
         _cursorControl = new CursorControl();
@@ -40,6 +45,8 @@ public class TutorialController : MonoBehaviour
         isPaused = true;
         PlayerReference.Instance.Player.GetComponent<FirstPersonController>().FreezePlayer();
         CursorControl.CursorActivate();
+        OverallCountDownTimer.SetTutorialTime(true);
+        RedoOrPlayObject.SetActive(false);
     }
 
     IEnumerator WaitForPlayerRef()
@@ -61,7 +68,6 @@ public class TutorialController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -74,5 +80,63 @@ public class TutorialController : MonoBehaviour
             tutorialBackground.SetActive(true);
             AttackPopUp = false;
         }
+        if (OverallCountDownTimer.getTutorialFinished())
+        {
+            OpenRedoOrPlay();
+        }
+    }
+
+    public static void StopTime()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public static void ResumeTime()
+    {
+        Time.timeScale = 1f;
+    }
+
+    public void openItemPopUp()
+    {
+        if (!ItemPopUp && barrikadeSystemPopUpDone)
+        {
+            tutorialBackground.SetActive(true);
+            itemPopUpOject.SetActive(true);
+            ItemPopUp = true;
+            PlayerReference.Instance.Player.GetComponent<FirstPersonController>().FreezePlayer();
+        }    
+    }
+
+    public void setBarrikadeSystemPopUpDone()
+    {
+        barrikadeSystemPopUpDone = true;
+    }
+
+    public void OpenRedoOrPlay()
+    {
+        RedoOrPlayObject.SetActive(true);
+        tutorialBackground.SetActive(true);
+        PlayerReference.Instance.Player.GetComponent<FirstPersonController>().FreezePlayer();
+        StopTime();
+        OverallCountDownTimer.SetTutorialFinsished(false);
+        
+    }
+
+    public void ReloadTutorial()
+    {
+        StartCoroutine(ReloadSceneWithDisable());
+    }
+
+    private IEnumerator ReloadSceneWithDisable()
+    {
+        AttackPopUp = true;
+        ItemPopUp = false;
+        barrikadeSystemPopUpDone = false;
+        isPaused = true;
+        RedoOrPlayObject.SetActive(false);
+        OverallCountDownTimer.SetTutorialFinsished(false);
+        ResumeTime();
+        yield return null;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

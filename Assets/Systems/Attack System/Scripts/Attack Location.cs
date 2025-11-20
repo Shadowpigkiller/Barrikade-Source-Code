@@ -40,7 +40,7 @@ public class AttackLocation : MonoBehaviour
         playerObject = GameObject.Find("PlayerCapsule");
         attackDurationTimer = maxAttackDuration;
         _mainCamera = Camera.main;
-        
+        /*
         models3d[0] = GameObject.FindGameObjectWithTag("EA");
         models3d[1] = GameObject.FindGameObjectWithTag("LRA1");
         models3d[2] = GameObject.FindGameObjectWithTag("KA");
@@ -55,13 +55,13 @@ public class AttackLocation : MonoBehaviour
         newMaterialwindow = models3d[1].GetComponent<MeshRenderer>().materials;
         newMaterialwindow[0] = outline;
         newMaterialwindow[1] = outline;
-        
+        */
     }
 
     public void ActivateAttack()
     {
         attackActive = true;
-        ChangeOutline(true);
+        //ChangeOutline(true);
         attackDurationTimer = maxAttackDuration;
         MiniMapAttackLocationDot.SetActive(true);
         SpawnCapsule.instance.Activate(transform, locationIdentifier, capsuleOffsetx, capsuleOffsety, capsuleOffsetz, capsuleRotation);
@@ -72,7 +72,7 @@ public class AttackLocation : MonoBehaviour
     public void DecativateAttack()
     {
         attackActive = false;
-        ChangeOutline(false);
+        //ChangeOutline(false);
         MiniMapAttackLocationDot.SetActive(false);
         SpawnCapsule.instance.Deactivate(locationIdentifier);
         AttackAreaMusic.instance.PlayMusic(attackSound, transform, 1, false, locationIdentifier);

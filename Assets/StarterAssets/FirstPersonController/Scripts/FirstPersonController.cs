@@ -249,7 +249,8 @@ namespace StarterAssets
 			var inputs = GetComponent<StarterAssetsInputs>();
 			inputs.cursorLocked = false;
 			inputs.cursorInputForLook = false;
-
+			footstepsSound.enabled = false;
+			sprintSound.enabled = false;
 			// Disable input
 			GetComponent<PlayerInput>().enabled = false;
 			inputs.enabled = false;

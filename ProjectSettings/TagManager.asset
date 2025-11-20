@@ -19,6 +19,8 @@ TagManager:
   - KA
   - EA
   - EBA
+  - TutorialBackground
+  - RedoOrPlay
   layers:
   - Default
   - TransparentFX
