@@ -26,4 +26,16 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void PlayTutorial()
+    {
+        CursorControl.CursorDeactivate();
+        SceneManager.LoadScene(5);
+        Time.timeScale = 1f;
+        if (PlayerReference.Instance != null)
+        {
+            PlayerReference.Instance.gameObject.SetActive(true);
+        }
+        NAB_Player_Controller.SetNAB(0);
+    }
 }

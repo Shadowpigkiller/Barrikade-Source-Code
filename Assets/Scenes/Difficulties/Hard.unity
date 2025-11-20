@@ -759,6 +759,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
   areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
+  outline: {fileID: 0}
+  crossedNailOutline: {fileID: 0}
   NAB_Required: 1
   attackActive: 0
   attackDurationTimer: 0
@@ -6569,6 +6571,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
   areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
+  outline: {fileID: 0}
+  crossedNailOutline: {fileID: 0}
   NAB_Required: 1
   attackActive: 0
   attackDurationTimer: 0
@@ -15928,10 +15932,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OverallCountDownTimer
   winTimer: {fileID: 364065315}
+  timer: 180
   backgroundMusic: {fileID: 1539449357}
   stage1: {fileID: 8300000, guid: ba6660d2ac840a647919832abffe912c, type: 3}
   stage2: {fileID: 8300000, guid: f6c6ce14a948b184db00c0c9f00d82c3, type: 3}
   stage3: {fileID: 8300000, guid: 9444180b6b596324c8c7bf6a2d6dd313, type: 3}
+  tutorialMusic: {fileID: 0}
 --- !u!114 &412248560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15960,8 +15966,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackController
   attackLocationsParent: {fileID: 1424748511}
-  attackInitiatorTimer: 5
-  maxAttackInitiatorTimer: 5
+  attackInitiatorTimer: 8
+  maxAttackInitiatorTimer: 8
 --- !u!114 &412248562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36677,7 +36683,7 @@ MonoBehaviour:
   - {fileID: 2846408622756646816, guid: 29c13478ee671bf438574b841a548c2f, type: 3}
   - {fileID: 9183188937994201367, guid: 776e958ee372c1848893430b8414de36, type: 3}
   - {fileID: 8986398016047916352, guid: 07b94c541f3117f468ef973cb053d2b1, type: 3}
-  maxSpawnTimer: 45
+  maxSpawnTimer: 40
   noRepeat: 
 --- !u!114 &863512944
 MonoBehaviour:
@@ -36691,9 +36697,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f7402d80004c14597f63803d98ceaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UseItemScript
-  watchMaxTime: 2
-  syringeMaxTime: 7
-  crossBlockedMax: 10
+  watchMaxTime: 4
+  syringeMaxTime: 8
+  crossBlockedMax: 12
+  attackLocationScript: {fileID: 0}
 --- !u!4 &863512945
 Transform:
   m_ObjectHideFlags: 0
@@ -48092,6 +48099,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
   areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
+  outline: {fileID: 0}
+  crossedNailOutline: {fileID: 0}
   NAB_Required: 1
   attackActive: 0
   attackDurationTimer: 0
@@ -50174,6 +50183,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
   areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
+  outline: {fileID: 0}
+  crossedNailOutline: {fileID: 0}
   NAB_Required: 1
   attackActive: 0
   attackDurationTimer: 0

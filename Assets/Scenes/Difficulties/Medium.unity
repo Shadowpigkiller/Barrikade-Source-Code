@@ -6458,6 +6458,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
   areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
+  outline: {fileID: 0}
+  crossedNailOutline: {fileID: 0}
   NAB_Required: 1
   attackActive: 0
   attackDurationTimer: 0
@@ -16015,10 +16017,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OverallCountDownTimer
   winTimer: {fileID: 364065315}
+  timer: 180
   backgroundMusic: {fileID: 1539449357}
   stage1: {fileID: 8300000, guid: ba6660d2ac840a647919832abffe912c, type: 3}
   stage2: {fileID: 8300000, guid: f6c6ce14a948b184db00c0c9f00d82c3, type: 3}
   stage3: {fileID: 8300000, guid: 9444180b6b596324c8c7bf6a2d6dd313, type: 3}
+  tutorialMusic: {fileID: 0}
 --- !u!114 &412248560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16047,8 +16051,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackController
   attackLocationsParent: {fileID: 1424748511}
-  attackInitiatorTimer: 7
-  maxAttackInitiatorTimer: 7
+  attackInitiatorTimer: 10
+  maxAttackInitiatorTimer: 10
 --- !u!114 &412248562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36642,9 +36646,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f7402d80004c14597f63803d98ceaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UseItemScript
-  watchMaxTime: 5
-  syringeMaxTime: 10
-  crossBlockedMax: 15
+  watchMaxTime: 8
+  syringeMaxTime: 12
+  crossBlockedMax: 17
+  attackLocationScript: {fileID: 0}
 --- !u!4 &863512945
 Transform:
   m_ObjectHideFlags: 0
@@ -47906,6 +47911,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
   areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
+  outline: {fileID: 0}
+  crossedNailOutline: {fileID: 0}
   NAB_Required: 1
   attackActive: 0
   attackDurationTimer: 0
@@ -49988,6 +49995,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
   areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
+  outline: {fileID: 0}
+  crossedNailOutline: {fileID: 0}
   NAB_Required: 1
   attackActive: 0
   attackDurationTimer: 0

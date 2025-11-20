@@ -2,7 +2,6 @@ using UnityEngine;
 using StarterAssets;
 using UnityEngine.InputSystem;
 using System.Collections;
-using UnityEditor.PackageManager;
 using UnityEngine.SceneManagement;
 public class TutorialController : MonoBehaviour
 {
