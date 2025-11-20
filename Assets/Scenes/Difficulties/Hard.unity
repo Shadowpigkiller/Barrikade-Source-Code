@@ -759,6 +759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
   areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
+  models3d: {fileID: 0}
   outline: {fileID: 0}
   crossedNailOutline: {fileID: 0}
   NAB_Required: 1
@@ -769,6 +770,7 @@ MonoBehaviour:
   NAB_AmountText: {fileID: 557245421}
   MiniMapAttackLocationDot: {fileID: 295319835}
   attackSound: {fileID: 8300000, guid: 9cc928e8d79b56e4080140935626548a, type: 3}
+  barrikade: {fileID: 0}
   initialAttackSound: {fileID: 8300000, guid: 25ad0cf6dfa4356498b883ce50117094, type: 3}
   capsuleOffsetx: 0
   capsuleOffsety: 0
@@ -6571,6 +6573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
   areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
+  models3d: {fileID: 0}
   outline: {fileID: 0}
   crossedNailOutline: {fileID: 0}
   NAB_Required: 1
@@ -6581,6 +6584,7 @@ MonoBehaviour:
   NAB_AmountText: {fileID: 557245421}
   MiniMapAttackLocationDot: {fileID: 702939150}
   attackSound: {fileID: 8300000, guid: 9cc928e8d79b56e4080140935626548a, type: 3}
+  barrikade: {fileID: 0}
   initialAttackSound: {fileID: 8300000, guid: 25ad0cf6dfa4356498b883ce50117094, type: 3}
   capsuleOffsetx: -1
   capsuleOffsety: -1
@@ -48189,6 +48193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
   areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
+  models3d: {fileID: 0}
   outline: {fileID: 0}
   crossedNailOutline: {fileID: 0}
   NAB_Required: 1
@@ -48199,6 +48204,7 @@ MonoBehaviour:
   NAB_AmountText: {fileID: 557245421}
   MiniMapAttackLocationDot: {fileID: 405232182}
   attackSound: {fileID: 8300000, guid: 9cc928e8d79b56e4080140935626548a, type: 3}
+  barrikade: {fileID: 0}
   initialAttackSound: {fileID: 8300000, guid: 25ad0cf6dfa4356498b883ce50117094, type: 3}
   capsuleOffsetx: 0
   capsuleOffsety: 0
@@ -50273,6 +50279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
   areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
+  models3d: {fileID: 0}
   outline: {fileID: 0}
   crossedNailOutline: {fileID: 0}
   NAB_Required: 1
@@ -50283,6 +50290,7 @@ MonoBehaviour:
   NAB_AmountText: {fileID: 557245421}
   MiniMapAttackLocationDot: {fileID: 1643587876}
   attackSound: {fileID: 8300000, guid: 9cc928e8d79b56e4080140935626548a, type: 3}
+  barrikade: {fileID: 0}
   initialAttackSound: {fileID: 8300000, guid: 25ad0cf6dfa4356498b883ce50117094, type: 3}
   capsuleOffsetx: 0
   capsuleOffsety: 0
@@ -52171,7 +52179,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5413624821383076567, guid: 383ad2abc6918fe44a5598ed74ce5fd0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
