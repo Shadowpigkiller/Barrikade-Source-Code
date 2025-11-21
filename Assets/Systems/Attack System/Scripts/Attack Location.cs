@@ -44,7 +44,7 @@ public class AttackLocation : MonoBehaviour
 
         oldMaterialsEntrance = models3d.GetComponent<MeshRenderer>().materials;
         newMaterialsEntrance = models3d.GetComponent<MeshRenderer>().materials;
-        newMaterialsEntrance[1] = outline;
+        newMaterialsEntrance[0] = outline;
 
         oldMaterialwindow = models3d.GetComponent<MeshRenderer>().materials;
         newMaterialwindow = models3d.GetComponent<MeshRenderer>().materials;
@@ -186,7 +186,7 @@ public class AttackLocation : MonoBehaviour
                 models3d.GetComponent<MeshRenderer>().materials = newMaterialwindow;
             } else
             {
-                newMaterialsEntrance[1] = crossedNailOutline;
+                newMaterialsEntrance[0] = crossedNailOutline;
                 models3d.GetComponent<MeshRenderer>().materials = newMaterialsEntrance;
             }
         } else
@@ -198,7 +198,7 @@ public class AttackLocation : MonoBehaviour
                 models3d.GetComponent<MeshRenderer>().materials = oldMaterialwindow;
             } else
             {
-                newMaterialsEntrance[1] = outline;
+                newMaterialsEntrance[0] = outline;
                 models3d.GetComponent<MeshRenderer>().materials = oldMaterialsEntrance;
             }
         }
