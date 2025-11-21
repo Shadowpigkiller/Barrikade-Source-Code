@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7473805028166515429}
   - component: {fileID: 3310415520796346917}
+  - component: {fileID: 7536429290265407078}
   m_Layer: 0
   m_Name: MusicObject - AttackAreas
   m_TagString: Untagged
@@ -174,3 +175,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7536429290265407078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3298893564537599525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a65c33cd8d614614d8e897c8c4af5488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioControllerScript
+  audioType: 1
