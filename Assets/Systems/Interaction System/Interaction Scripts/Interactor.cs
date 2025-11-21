@@ -51,7 +51,6 @@ public class Interactor : MonoBehaviour
         if (callbackContext.action == _playerInput.actions["UseItem"] && UseItemScript.crossedNails == true)
         {
             UseItemScript.crossedNails = false;
-            Debug.Log("callbacked");
             UseItemScript.crossPressed = true;
         }
         Debug.Log(callbackContext.action == _playerInput.actions["Interact"]);

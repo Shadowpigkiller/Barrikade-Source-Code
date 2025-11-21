@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -36,7 +37,7 @@ public class AttackController : MonoBehaviour
     private void InitiateAttack()
     {
         int chosenAreaNum = Random.Range(0, attackLocations);
-        while (chosenAreaNum == noRepeat || chosenAreaNum == UseItemScript.windowBlocked)
+        while (chosenAreaNum == noRepeat || UseItemScript.windowBlocked.Contains(chosenAreaNum))
         {
             chosenAreaNum = Random.Range(0, attackLocations);
         }
@@ -47,11 +48,5 @@ public class AttackController : MonoBehaviour
         {
             chosenArea.GetComponent<AttackLocation>().ActivateAttack();
         }
-    }
-
-    public void DeactivateCrossedOutlines(int location)
-    {
-        GameObject chosenArea = attackLocationsParent.transform.GetChild(location).gameObject;
-        chosenArea.GetComponent<AttackLocation>().CrossedNailOutline(false);
     }
 }
