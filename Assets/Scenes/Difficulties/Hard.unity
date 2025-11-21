@@ -36788,13 +36788,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 863512942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29f7402d80004c14597f63803d98ceaf, type: 3}
+  m_Script: {fileID: 11500000, guid: 220288b981e509644845bad512a855dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UseItemScript
-  watchMaxTime: 4
-  syringeMaxTime: 8
-  crossBlockedMax: 12
-  attackLocationScript: {fileID: 0}
+  watchMaxTime: 5
+  syringeSpeedNonStatic: 1.3
+  syringeDrainNonStatic: 10
+  syringeMaxTime: 10
+  revolverSFX: {fileID: 8300000, guid: 23bbf76a722a0694289fc6c698ab9f79, type: 3}
+  crossBlockedMax: 15
+  attackControllerScript: {fileID: 412248561}
 --- !u!4 &863512945
 Transform:
   m_ObjectHideFlags: 0
