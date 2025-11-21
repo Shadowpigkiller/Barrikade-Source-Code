@@ -11375,7 +11375,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Syringe  lasts  for  5  seconds
+  m_text: Syringe  lasts  for  6  seconds
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1e0df4a745051c14eb72a848cac5dfc9, type: 2}
   m_sharedMaterial: {fileID: 6497188497536538342, guid: 1e0df4a745051c14eb72a848cac5dfc9, type: 2}
@@ -17462,7 +17462,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Watch  lasts  for  3  seconds
+  m_text: Watch  lasts  for  4  seconds
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1e0df4a745051c14eb72a848cac5dfc9, type: 2}
   m_sharedMaterial: {fileID: 6497188497536538342, guid: 1e0df4a745051c14eb72a848cac5dfc9, type: 2}
@@ -28095,7 +28095,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Items  spawn  every  25  seconds
+  m_text: Items  spawn  every  20  seconds
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1e0df4a745051c14eb72a848cac5dfc9, type: 2}
   m_sharedMaterial: {fileID: 6497188497536538342, guid: 1e0df4a745051c14eb72a848cac5dfc9, type: 2}
@@ -74342,7 +74342,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Syringe  lasts  for  20  seconds
+  m_text: Syringe  lasts  for  15  seconds
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1e0df4a745051c14eb72a848cac5dfc9, type: 2}
   m_sharedMaterial: {fileID: 6497188497536538342, guid: 1e0df4a745051c14eb72a848cac5dfc9, type: 2}
@@ -82339,8 +82339,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -427, y: 97}
-  m_SizeDelta: {x: 474.2476, y: 384.0676}
+  m_AnchoredPosition: {x: -399.9052, y: 53.278}
+  m_SizeDelta: {x: 1030.2961, y: 787.44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2024203602
 MonoBehaviour:
@@ -82362,7 +82362,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: cb86bae56449c7c46b7c4622cc5ddecc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -85509,7 +85509,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Watch  lasts  for  4  seconds
+  m_text: Watch  lasts  for  6  seconds
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1e0df4a745051c14eb72a848cac5dfc9, type: 2}
   m_sharedMaterial: {fileID: 6497188497536538342, guid: 1e0df4a745051c14eb72a848cac5dfc9, type: 2}

@@ -115,7 +115,7 @@ public class AttackLocation : MonoBehaviour
             }
             else
             {
-                //GameObject.FindWithTag("AttackControllerObject").GetComponent<WinLoseScript>().ShowLoseScreen(true);
+                GameObject.FindWithTag("AttackControllerObject").GetComponent<WinLoseScript>().ShowLoseScreen(true);
             }
             
         }

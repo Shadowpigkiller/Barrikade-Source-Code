@@ -33,8 +33,8 @@ public class SettingsScript : MonoBehaviour
     {
 
         //Issue where volume immediatetly sets to 0 on start, so set default values here
-        musicVolume = 1f;
-        SVXVolume = 1f;
+        //musicVolume = 1f;
+        //SVXVolume = 1f;
 
     }
 
