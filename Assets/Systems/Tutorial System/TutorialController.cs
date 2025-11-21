@@ -3,6 +3,7 @@ using StarterAssets;
 using UnityEngine.InputSystem;
 using System.Collections;
 using UnityEngine.SceneManagement;
+//using UnityEditor.SettingsManagement;
 public class TutorialController : MonoBehaviour
 {
     [HideInInspector] public CursorControl _cursorControl;
@@ -82,6 +83,7 @@ public class TutorialController : MonoBehaviour
         if (OverallCountDownTimer.getTutorialFinished())
         {
             OpenRedoOrPlay();
+            SettingsScript.SetDifficultyCompleted(0);
         }
     }
 

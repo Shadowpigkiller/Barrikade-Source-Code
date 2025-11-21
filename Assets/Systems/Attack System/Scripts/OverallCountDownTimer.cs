@@ -35,7 +35,24 @@ public class OverallCountDownTimer : MonoBehaviour
             {
                 winTimer.text = string.Format("{0:00}:{1:00}", 0, 0);
                 if (!tutorialTime) {
-                gameObject.GetComponent<WinLoseScript>().ShowWinScreen(true);
+                    gameObject.GetComponent<WinLoseScript>().ShowWinScreen(true);
+                    if (SettingsScript.getDifficulty() == 1)
+                    {
+                        SettingsScript.SetDifficultyCompleted(1);
+                    }
+                    else if (SettingsScript.getDifficulty() == 2)
+                    {
+                        SettingsScript.SetDifficultyCompleted(2);
+                    }
+                    else if (SettingsScript.getDifficulty() == 3)
+                    {
+                        SettingsScript.SetDifficultyCompleted(3);
+                    }
+                    else if (SettingsScript.getDifficulty() == 4)
+                    {
+                        SettingsScript.SetDifficultyCompleted(4);
+                    }
+                    else{}
                 }
                 else
                 {
