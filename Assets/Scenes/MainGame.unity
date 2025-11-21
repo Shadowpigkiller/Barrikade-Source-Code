@@ -36351,7 +36351,7 @@ MonoBehaviour:
   - {fileID: 2846408622756646816, guid: 29c13478ee671bf438574b841a548c2f, type: 3}
   - {fileID: 9183188937994201367, guid: 776e958ee372c1848893430b8414de36, type: 3}
   - {fileID: 8986398016047916352, guid: 07b94c541f3117f468ef973cb053d2b1, type: 3}
-  maxSpawnTimer: 2
+  maxSpawnTimer: 1
   noRepeat: 
 --- !u!4 &863512945
 Transform:
@@ -36390,7 +36390,7 @@ MonoBehaviour:
   syringeMaxTime: 10
   revolverSFX: {fileID: 8300000, guid: 23bbf76a722a0694289fc6c698ab9f79, type: 3}
   crossBlockedMax: 15
-  attackControllerScript: {fileID: 412248561}
+  attackParent: {fileID: 1424748511}
 --- !u!1001 &864598440
 PrefabInstance:
   m_ObjectHideFlags: 0
