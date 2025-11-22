@@ -90779,7 +90779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65c33cd8d614614d8e897c8c4af5488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioControllerScript
-  audioType: 1
+  audioType: 0
 --- !u!1 &1544266380
 GameObject:
   m_ObjectHideFlags: 0
