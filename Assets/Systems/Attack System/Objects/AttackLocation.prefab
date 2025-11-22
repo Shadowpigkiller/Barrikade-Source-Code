@@ -68,6 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackLocation
   areaTimer: {fileID: 2138850679623672629, guid: 354fd76b76823034183b4ceba1bca85e, type: 3}
+  outline: {fileID: 0}
   NAB_Required: 1
   attackActive: 0
   attackDurationTimer: 0
@@ -80,6 +81,7 @@ MonoBehaviour:
   capsuleOffsetx: 0
   capsuleOffsety: 0
   capsuleOffsetz: 1
+  capsuleRotation: 0
   timerOffsetx: 0
   timerOffsety: 1.2
   timerOffsetz: -0.3

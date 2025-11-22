@@ -7,6 +7,9 @@ public class WinLoseScript : MonoBehaviour
     public GameObject winCanvas;
     public PlayerInput playerMap;
     [HideInInspector] public CursorControl _cursorControl;
+    [SerializeField] public AudioClip EndSound;
+    [SerializeField] public AudioClip WinSound;
+    [SerializeField] public AudioSource audioSource;
     void Awake()
     {
         _cursorControl = new CursorControl();
@@ -28,6 +31,7 @@ public class WinLoseScript : MonoBehaviour
             GameObject.FindWithTag("Game UI").SetActive(false);
         }
         CursorControl.CursorActivate();
+        audioSource.PlayOneShot(EndSound);
     }
 
     public void ShowWinScreen(bool toggle)
@@ -41,5 +45,6 @@ public class WinLoseScript : MonoBehaviour
             GameObject.FindWithTag("Game UI").SetActive(false);
         }
         CursorControl.CursorActivate();
+        audioSource.PlayOneShot(WinSound);
     }
 }

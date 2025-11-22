@@ -50,7 +50,9 @@ namespace StarterAssets
 		public float TopClamp = 90.0f;
 		[Tooltip("How far in degrees can you move the camera down")]
 		public float BottomClamp = -90.0f;
-		public AudioSource footstepsSound, sprintSound;
+		public AudioSource footstepsSound;
+		public AudioClip runSound;
+		public AudioClip footstepSound;
 		// cinemachine
 		private float _cinemachineTargetPitch;
 
@@ -112,10 +114,15 @@ namespace StarterAssets
 			GroundedCheck();
 			Move();
 			if (_input.move.x == 0 && _input.move.y == 0)
-            {
-                footstepsSound.enabled = false;
-				sprintSound.enabled = false;
-            }
+			{
+				if (footstepsSound.isPlaying)
+					footstepsSound.Stop();
+			}
+			else
+			{
+				if (!footstepsSound.isPlaying)
+					footstepsSound.Play();
+			}
 		}
 
 		private void LateUpdate()
@@ -161,15 +168,15 @@ namespace StarterAssets
 		{
 			// set target speed based on move speed, sprint speed and if sprint is pressed
 			float targetSpeed = MoveSpeed;
+			footstepsSound.enabled = true;
 			if (_input.sprint & _staminaController.unlockSprint)
 			{
 				if (_staminaController.hasRegenerated)
 				{
 					if (_staminaController.playerStamina > 0)
 					{
-						footstepsSound.enabled = false;
-						sprintSound.enabled = true;
-						targetSpeed = UseItemScript.syringeActive ? SprintSpeed * UseItemScript.syringeSpeed: SprintSpeed;
+						footstepsSound.clip = runSound;
+						targetSpeed = UseItemScript.syringeActive ? SprintSpeed * UseItemScript.syringSpeed: SprintSpeed;
 						_staminaController.weAreSprinting = true;
 						_staminaController.Sprinting();
 					}
@@ -177,8 +184,8 @@ namespace StarterAssets
 			}
 			else
 			{
-				sprintSound.enabled = false;
-				footstepsSound.enabled = true;
+				footstepsSound.clip = footstepSound;
+				//footstepsSound.enabled = true;
 				_staminaController.weAreSprinting = false;
 			}
 			//float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
@@ -242,6 +249,40 @@ namespace StarterAssets
 
 			// when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
 			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
+		}
+		public void FreezePlayer()
+		{
+			// Stop Starter Assets from relocking the cursor
+			var inputs = GetComponent<StarterAssetsInputs>();
+			inputs.cursorLocked = false;
+			inputs.cursorInputForLook = false;
+			footstepsSound.enabled = false;
+			//sprintSound.enabled = false;
+			// Disable input
+			GetComponent<PlayerInput>().enabled = false;
+			inputs.enabled = false;
+
+			// Stop movement script
+			enabled = false;
+
+			// Unlock cursor properly
+			Cursor.lockState = CursorLockMode.None;
+			Cursor.visible = true;
+		}
+
+		public void UnfreezePlayer()
+		{
+			var inputs = GetComponent<StarterAssetsInputs>();
+			inputs.cursorLocked = true;
+			inputs.cursorInputForLook = true;
+
+			GetComponent<PlayerInput>().enabled = true;
+			inputs.enabled = true;
+			enabled = true;
+
+			// Lock cursor for gameplay
+			Cursor.lockState = CursorLockMode.Locked;
+			Cursor.visible = false;
 		}
 	}
 }

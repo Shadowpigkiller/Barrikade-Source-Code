@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -9,6 +10,7 @@ public class AttackController : MonoBehaviour
     [SerializeField] private float maxAttackInitiatorTimer;
     [HideInInspector] private int attackLocations;
     [HideInInspector] private int noRepeat;
+    [SerializeField] public static AudioClip revolverSFX;
 
     void Start()
     {
@@ -34,9 +36,8 @@ public class AttackController : MonoBehaviour
 
     private void InitiateAttack()
     {
-        
         int chosenAreaNum = Random.Range(0, attackLocations);
-        while (chosenAreaNum == noRepeat || chosenAreaNum == UseItemScript.windowBlocked)
+        while (chosenAreaNum == noRepeat || UseItemScript.windowBlocked.Contains(chosenAreaNum))
         {
             chosenAreaNum = Random.Range(0, attackLocations);
         }

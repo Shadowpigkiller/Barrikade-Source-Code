@@ -9,14 +9,15 @@ TagManager:
   - PauseMenu
   - AttackControllerObject
   - Game UI
-  - KitchenAttack
-  - LRAttack
-  - FoyerAttack
   - MiniMapUI
   - WatchItem
   - SyringeItem
   - RevolverItem
   - CrossedNailsItem
+  - EA
+  - TutorialBackground
+  - RedoOrPlay
+  - AttackArea
   layers:
   - Default
   - TransparentFX

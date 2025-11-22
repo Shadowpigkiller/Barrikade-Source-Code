@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Difficulties/Hard.unity
     guid: ce0cc8781482e194c81c7a166a952d51
+  - enabled: 1
+    path: Assets/Scenes/Difficulties/NIGHTMARE.unity
+    guid: a6487d9583510a54a83cc177a2084d9b
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 15404c4a2f22f6a4b872be4940ff8def
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

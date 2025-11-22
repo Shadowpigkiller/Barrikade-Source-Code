@@ -1,3 +1,4 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -21,14 +22,19 @@ public class SettingsScript : MonoBehaviour
     public static int difficulty = 2;
     public static float musicVolume = 1;
     public static float SVXVolume = 1;
-
+    public static int difficultyCompleted = -1;
     //Functions
+
+    private void Awake()
+    {
+    
+    }
     private void Start()
     {
 
         //Issue where volume immediatetly sets to 0 on start, so set default values here
-        musicVolume = 1f;
-        SVXVolume = 1f;
+        //musicVolume = 1f;
+        //SVXVolume = 1f;
 
     }
 
@@ -59,5 +65,15 @@ public class SettingsScript : MonoBehaviour
     public static int getDifficulty()
     {
         return difficulty;
+    }
+    
+    public static void SetDifficultyCompleted(int value)
+    {
+        difficultyCompleted = value;
+    }
+
+    public static int GetDifficultyCompleted()
+    {
+        return difficultyCompleted;
     }
 }
