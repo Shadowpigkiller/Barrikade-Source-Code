@@ -1,3 +1,6 @@
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -23,11 +26,13 @@ public class InventoryScript : MonoBehaviour
     {
         _playerInput.actions["UseItem"].performed += UseItems;
         _playerInput.actions["CycleInventory"].performed += CyclePlayerInventory;
+        _playerInput.actions["RemoveItem"].performed += RemoveItem;
     }
     void OnDisable()
     {
         _playerInput.actions["UseItem"].performed -= UseItems;
         _playerInput.actions["CycleInventory"].performed -= CyclePlayerInventory;
+        _playerInput.actions["RemoveItem"].performed -= RemoveItem;
     }
 
     public void CollectItem(string item)
@@ -82,9 +87,25 @@ public class InventoryScript : MonoBehaviour
 
     private void UseItems(InputAction.CallbackContext callbackContext)
     {
+        if(inventory[selector] == UseItemScript.Items.CrossedNails || inventory[selector] == UseItemScript.Items.Revolver)
+        {
+            return;
+        }
         UseItemScript.UseItem(inventory[selector]);
         inventory[selector] = UseItemScript.Items.None;
         _inventoryUIScript.RemoveItems(selector);
+    }
+
+    private void RemoveItem(InputAction.CallbackContext callbackContext)
+    {
+        inventory[selector] = UseItemScript.Items.None;
+        _inventoryUIScript.RemoveItems(selector); 
+    }
+
+    public void RemoveCrossedNails()
+    {
+        inventory[selector] = UseItemScript.Items.None;
+        _inventoryUIScript.RemoveItems(selector); 
     }
 
     private void CyclePlayerInventory(InputAction.CallbackContext callbackContext)

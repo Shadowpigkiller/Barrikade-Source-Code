@@ -77,12 +77,19 @@ public class UseItemScript : MonoBehaviour
         if (playerObject.GetComponent<InventoryScript>().inventory[0] == UseItemScript.Items.Revolver || playerObject.GetComponent<InventoryScript>().inventory[1] == UseItemScript.Items.Revolver)
         {
             revolver = true;
+        } else
+        {
+            revolver = false;
         }
 
+        Debug.Log(crossedNails);
         if (crossNailsSelected)
         {
             crossNailsSelected = false;
             crossedNails = true;
+        } else
+        {
+            crossedNails = false;
         }
 
         if (Array.Exists(windowBlocked, window => window != -1))

@@ -128,20 +128,25 @@ public class AttackLocation : MonoBehaviour
 
     public void OnInteract()
     {
-        if (NAB_Player_Controller.getNAB_Amount() >= NAB_Required && attackActive)
+        if (NAB_Player_Controller.getNAB_Amount() >= NAB_Required && attackActive && !UseItemScript.crossPressed)
         {
             AttackAreaMusic.instance.PlaySFX(barrikade, transform, 1);
             DecativateAttack();
             NAB_Player_Controller.removeNAB(NAB_Required);
             NAB_AmountText.text = Convert.ToString(NAB_Player_Controller.getNAB_Amount());
             Debug.Log("interacted");
+            return;
         }
-        if (UseItemScript.crossPressed)
+        if (UseItemScript.crossPressed && !attackActive)
         {   
             UseItemScript.windowBlocked[Array.IndexOf(UseItemScript.windowBlocked, -1)] = locationIdentifier;
             CrossedNailOutline(true);
             UseItemScript.crossPressed = false;
+            playerObject.GetComponent<InventoryScript>().RemoveCrossedNails();
+            return;
         }
+        UseItemScript.crossedNails = true;
+        UseItemScript.crossPressed = false;
     }
 
     private void UpdateTimerCamera()
@@ -156,14 +161,13 @@ public class AttackLocation : MonoBehaviour
 
     public void WindowCrossNailed(int i)
     {
-        Debug.Log(crossBlockIncrement);
-            crossBlockIncrement += Time.deltaTime;
-            if (crossBlockIncrement >= UseItemScript.crossBlockMaxStatic)
-            {
-                CrossedNailOutline(false);
-                crossBlockIncrement = 0;
-                UseItemScript.windowBlocked[i] = -1;
-            }
+        crossBlockIncrement += Time.deltaTime;
+        if (crossBlockIncrement >= UseItemScript.crossBlockMaxStatic)
+        {
+            CrossedNailOutline(false);
+            crossBlockIncrement = 0;
+            UseItemScript.windowBlocked[i] = -1;
+        }
     }
     private void ChangeOutline(bool active)
     {

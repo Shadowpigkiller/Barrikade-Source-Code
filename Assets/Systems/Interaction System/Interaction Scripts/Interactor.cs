@@ -48,14 +48,16 @@ public class Interactor : MonoBehaviour
     }
     private void DoInteract(InputAction.CallbackContext callbackContext)
     {
+        if (!Physics.Raycast(_transform.position + Vector3.up + (_transform.forward * 0.2f), _transform.forward, out var hit, 2.5f, interactableLayer)) return;
+        if (!hit.transform.TryGetComponent(out IInteractable interactable)) return;
         if (callbackContext.action == _playerInput.actions["UseItem"] && UseItemScript.crossedNails == true)
         {
             UseItemScript.crossedNails = false;
             UseItemScript.crossPressed = true;
+        } else if(callbackContext.action == _playerInput.actions["UseItem"] && UseItemScript.crossedNails == false){
+            //If f is pressed but player doesn't have crossed nails nothing get interacted
+            return;
         }
-        Debug.Log(callbackContext.action == _playerInput.actions["Interact"]);
-        if (!Physics.Raycast(_transform.position + Vector3.up + (_transform.forward * 0.2f), _transform.forward, out var hit, 2.5f, interactableLayer)) return;
-        if (!hit.transform.TryGetComponent(out IInteractable interactable)) return;
         interactable.Interact();
         Debug.Log("Interact");
     }
