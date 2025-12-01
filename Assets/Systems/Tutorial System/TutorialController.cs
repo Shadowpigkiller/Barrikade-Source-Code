@@ -9,7 +9,7 @@ public class TutorialController : MonoBehaviour
     [HideInInspector] public CursorControl _cursorControl;
     private static StarterAssetsInputs _playerMovement;
     private static bool isPaused = true;
-    private static bool AttackPopUp = true;
+    private bool AttackPopUp = true;
     [SerializeField] public GameObject AttackPopUpObject;
     [SerializeField] public GameObject tutorialBackground;
     private PlayerInput _playerInput;
@@ -130,7 +130,7 @@ public class TutorialController : MonoBehaviour
 
     private IEnumerator ReloadSceneWithDisable()
     {
-        AttackPopUp = true;
+        //AttackPopUp = true;
         ItemPopUp = false;
         barrikadeSystemPopUpDone = false;
         isPaused = true;
