@@ -16407,7 +16407,6 @@ RectTransform:
   - {fileID: 1868950919}
   - {fileID: 697964139}
   - {fileID: 798739548}
-  - {fileID: 1594750717}
   - {fileID: 561288535}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 7.744, z: 0}
@@ -69408,7 +69407,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 433980031}
+    m_TransformParent: {fileID: 1868800391}
     m_Modifications:
     - target: {fileID: 1437202330447367668, guid: c82110ae28851aa439bfbbc606d39231, type: 3}
       propertyPath: m_Pivot.x
@@ -69460,23 +69459,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1437202330447367668, guid: c82110ae28851aa439bfbbc606d39231, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1437202330447367668, guid: c82110ae28851aa439bfbbc606d39231, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1437202330447367668, guid: c82110ae28851aa439bfbbc606d39231, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1437202330447367668, guid: c82110ae28851aa439bfbbc606d39231, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 658
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1437202330447367668, guid: c82110ae28851aa439bfbbc606d39231, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 239
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1437202330447367668, guid: c82110ae28851aa439bfbbc606d39231, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -83926,6 +83925,7 @@ RectTransform:
   - {fileID: 525015172}
   - {fileID: 1096703419}
   - {fileID: 1483640170}
+  - {fileID: 1594750717}
   m_Father: {fileID: 433980031}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
