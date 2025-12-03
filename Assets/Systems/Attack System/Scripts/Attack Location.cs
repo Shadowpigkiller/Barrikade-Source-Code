@@ -28,9 +28,9 @@ public class AttackLocation : MonoBehaviour
     [SerializeField] public AudioClip attackSound;
     [SerializeField] public AudioClip barrikade;
     [SerializeField] public AudioClip initialAttackSound;
-    [SerializeField] private int capsuleOffsetx;
-    [SerializeField] private int capsuleOffsety;
-    [SerializeField] private int capsuleOffsetz;
+    [SerializeField] private float capsuleOffsetx;
+    [SerializeField] private float capsuleOffsety;
+    [SerializeField] private float capsuleOffsetz;
     [SerializeField] private float capsuleRotation;
     [SerializeField] private float timerOffsetx;
     [SerializeField] private float timerOffsety;
