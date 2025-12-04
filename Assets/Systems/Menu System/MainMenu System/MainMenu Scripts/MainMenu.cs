@@ -58,17 +58,17 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
+        NAB_Player_Controller.SetNAB(0);
         int difficulty = SettingsScript.getDifficulty();
         CursorControl.CursorDeactivate();
-        SceneManager.LoadScene(difficulty);
         OverallCountDownTimer.SetTutorialTime(false);
         Time.timeScale = 1f;
+        SceneManager.LoadScene(difficulty);
         PauseMenuButtons.SetPauseState(false);
         if (PlayerReference.Instance != null)
         {
             PlayerReference.Instance.gameObject.SetActive(true);
         }
-        NAB_Player_Controller.SetNAB(0);
     }
 
     public void QuitGame()
@@ -78,13 +78,13 @@ public class MainMenu : MonoBehaviour
 
     public void PlayTutorial()
     {
+        NAB_Player_Controller.SetNAB(0);
         CursorControl.CursorDeactivate();
-        SceneManager.LoadScene(5);
         Time.timeScale = 1f;
+        SceneManager.LoadScene(5);
         if (PlayerReference.Instance != null)
         {
             PlayerReference.Instance.gameObject.SetActive(true);
         }
-        NAB_Player_Controller.SetNAB(0);
     }
 }
