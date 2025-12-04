@@ -13,7 +13,7 @@ public class PauseMenuButtons : MonoBehaviour
     {
         _cursorControl = new CursorControl();
     }
-    private static void SetPauseState(bool state)
+    public static void SetPauseState(bool state)
     {
         PauseMenuReference.Instance.gameObject.SetActive(state);
         isPaused = state;

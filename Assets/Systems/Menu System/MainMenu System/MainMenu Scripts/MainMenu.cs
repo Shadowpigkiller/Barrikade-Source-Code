@@ -63,6 +63,7 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(difficulty);
         OverallCountDownTimer.SetTutorialTime(false);
         Time.timeScale = 1f;
+        PauseMenuButtons.SetPauseState(false);
         if (PlayerReference.Instance != null)
         {
             PlayerReference.Instance.gameObject.SetActive(true);
