@@ -4322,7 +4322,7 @@ MonoBehaviour:
   winCanvas: {fileID: 2004714555}
   playerMap: {fileID: 7319692435509113358}
   EndSound: {fileID: 8300000, guid: ae9b4c57d45fe564c87e2bd21f7047a1, type: 3}
-  WinSound: {fileID: 8300000, guid: cf0d973d42af5dc4f88b1710aa4a98e3, type: 3}
+  WinSound: {fileID: 8300000, guid: 079a9b8670907b44091977db9d06095a, type: 3}
   audioSource: {fileID: 129122098}
 --- !u!114 &412248561
 MonoBehaviour:
