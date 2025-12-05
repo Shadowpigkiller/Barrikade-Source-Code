@@ -103,7 +103,7 @@ public class TutorialController : MonoBehaviour
         {
             tutorialBackground.SetActive(true);
             itemPopUpOject.SetActive(true);
-            ItemPopUp = true;
+            SetItemPopUp(true);
             PlayerReference.Instance.Player.GetComponent<FirstPersonController>().FreezePlayer();
         }    
     }
@@ -113,8 +113,14 @@ public class TutorialController : MonoBehaviour
         barrikadeSystemPopUpDone = true;
     }
 
+    public void SetItemPopUp(bool value)
+    {
+        ItemPopUp = value;
+    }
+
     public void OpenRedoOrPlay()
     {
+        SetItemPopUp(false);
         RedoOrPlayObject.SetActive(true);
         tutorialBackground.SetActive(true);
         PlayerReference.Instance.Player.GetComponent<FirstPersonController>().FreezePlayer();
@@ -131,7 +137,7 @@ public class TutorialController : MonoBehaviour
     private IEnumerator ReloadSceneWithDisable()
     {
         //AttackPopUp = true;
-        ItemPopUp = false;
+        SetItemPopUp(false);
         barrikadeSystemPopUpDone = false;
         isPaused = true;
         RedoOrPlayObject.SetActive(false);
