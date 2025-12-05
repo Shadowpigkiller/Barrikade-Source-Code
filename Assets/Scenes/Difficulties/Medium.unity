@@ -1772,6 +1772,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2087169288}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: fdfb95142d87cd54fb285bbb1c3dd0fa, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &128831596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3252,6 +3264,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2087169288}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: fdfb95142d87cd54fb285bbb1c3dd0fa, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5485,8 +5509,8 @@ MonoBehaviour:
   backgroundMusic: {fileID: 1539449357}
   stage1: {fileID: 8300000, guid: ba6660d2ac840a647919832abffe912c, type: 3}
   stage2: {fileID: 8300000, guid: f6c6ce14a948b184db00c0c9f00d82c3, type: 3}
-  stage3: {fileID: 8300000, guid: 9444180b6b596324c8c7bf6a2d6dd313, type: 3}
-  tutorialMusic: {fileID: 0}
+  stage3: {fileID: 8300000, guid: b1a5f3866b3778046a6482297614cc54, type: 3}
+  tutorialMusic: {fileID: 8300000, guid: c4e47d503894266488fd435a1a2f1b4a, type: 3}
 --- !u!114 &412248560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5632,13 +5656,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1953464890}
         m_TargetAssemblyTypeName: PauseMenuButtons, Assembly-CSharp
         m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2087169288}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: fdfb95142d87cd54fb285bbb1c3dd0fa, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -10351,13 +10387,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1953464890}
         m_TargetAssemblyTypeName: PauseMenuButtons, Assembly-CSharp
         m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2087169288}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: fdfb95142d87cd54fb285bbb1c3dd0fa, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -13825,6 +13873,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1552873236}
+    - target: {fileID: 1323111819609026622, guid: 22036f567e51a0d44a20ca73fcf3e838, type: 3}
+      propertyPath: NAB_AmountText
+      value: 
+      objectReference: {fileID: 557245421}
     - target: {fileID: 1329277963602862092, guid: 22036f567e51a0d44a20ca73fcf3e838, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -17070,6 +17122,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2087169288}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: fdfb95142d87cd54fb285bbb1c3dd0fa, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1268352362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18924,8 +18988,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -50.000015, y: -313.3928}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -50.000015, y: -307.3}
+  m_SizeDelta: {x: 100, y: 77.9274}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1395329500
 MonoBehaviour:
@@ -18947,7 +19011,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 35e8abd74167457489bb6797deed3471, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b94db83e9f043af4c899dff9262b15da, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -28256,16 +28320,16 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 706655982}
-  - {fileID: 5671540149470769969}
   - {fileID: 1135861529}
+  - {fileID: 1088021775}
   - {fileID: 433980031}
   - {fileID: 1953464895}
-  - {fileID: 546334666}
-  - {fileID: 1539449358}
   - {fileID: 932293364}
   - {fileID: 2004714559}
+  - {fileID: 5671540149470769969}
+  - {fileID: 2087169289}
+  - {fileID: 1539449358}
+  - {fileID: 546334666}
   - {fileID: 412248563}
   - {fileID: 1424748512}
   - {fileID: 863512945}
-  - {fileID: 1088021775}
-  - {fileID: 2087169289}

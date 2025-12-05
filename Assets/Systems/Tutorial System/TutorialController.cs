@@ -73,7 +73,7 @@ public class TutorialController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (NAB_Player_Controller.getNAB_Amount() == 7 && AttackPopUp)
+        if (NAB_Player_Controller.getNAB_Amount() == 5 && AttackPopUp)
         {
             AttackPopUpObject.SetActive(true);
             PlayerReference.Instance.Player.GetComponent<FirstPersonController>().FreezePlayer();

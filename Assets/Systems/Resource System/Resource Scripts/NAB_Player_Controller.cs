@@ -6,14 +6,12 @@ public static class NAB_Player_Controller : object
 {
     [Header("Main Nails And Boards Parameters")]
     [SerializeField] private static int NAB_Amount = 0;
-    [SerializeField] private static int maxNAB_Amount = 7;
-    //[SerializeField] public static Text NAB_AmountText;
+    [SerializeField] private static int maxNAB_Amount = 5;
     public static void AddNAB()
     {
         if (NAB_Amount < maxNAB_Amount)
         {
             NAB_Amount++;
-            //updateNABUI();
         }
     }
 
@@ -26,12 +24,7 @@ public static class NAB_Player_Controller : object
     {
         NAB_Amount = NAB_Num;
     }
-/*
-    public static void updateNABUI()
-    {
-        NAB_AmountText.text = Convert.ToString(NAB_Amount);
-    }
-*/
+
     public static void removeNAB(int NAB_Required) 
     {
             NAB_Amount -= NAB_Required;

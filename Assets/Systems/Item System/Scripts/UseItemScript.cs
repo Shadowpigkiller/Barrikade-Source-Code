@@ -82,7 +82,7 @@ public class UseItemScript : MonoBehaviour
             revolver = false;
         }
 
-        Debug.Log(crossedNails);
+        //Debug.Log(crossedNails);
         if (crossNailsSelected)
         {
             crossNailsSelected = false;
